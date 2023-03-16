@@ -32,7 +32,8 @@ namespace SimpleLocationWeb.Pages.Categories
             {
                 await _db.Category.AddAsync(Category);
                 await _db.SaveChangesAsync();
-                return RedirectToPage("Index");
+                TempData["success"] = "Category created successfully";
+                return RedirectToPage("/Categories/Index");
             }
             return Page();
         }

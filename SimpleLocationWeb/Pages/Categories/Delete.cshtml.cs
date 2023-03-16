@@ -33,7 +33,8 @@ namespace SimpleLocationWeb.Pages.Categories
             {
                 _db.Category.Remove(categoryFromDb);
                 await _db.SaveChangesAsync();
-                return RedirectToPage("Index");
+                TempData["success"] = "Category delete successfully";
+                return RedirectToPage("/Categories/Index");
             }
             return Page();
         }
