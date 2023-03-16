@@ -1,0 +1,12 @@
+C:\Users\olivier.malamou\source\repos\SimpleLocation\SimpleLocation.Models\bin\Debug\net6.0\SimpleLocation.Models.deps.json
+C:\Users\olivier.malamou\source\repos\SimpleLocation\SimpleLocation.Models\bin\Debug\net6.0\SimpleLocation.Models.dll
+C:\Users\olivier.malamou\source\repos\SimpleLocation\SimpleLocation.Models\bin\Debug\net6.0\SimpleLocation.Models.pdb
+C:\Users\olivier.malamou\source\repos\SimpleLocation\SimpleLocation.Models\obj\Debug\net6.0\SimpleLocation.Models.csproj.AssemblyReference.cache
+C:\Users\olivier.malamou\source\repos\SimpleLocation\SimpleLocation.Models\obj\Debug\net6.0\SimpleLocation.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\olivier.malamou\source\repos\SimpleLocation\SimpleLocation.Models\obj\Debug\net6.0\SimpleLocation.Models.AssemblyInfoInputs.cache
+C:\Users\olivier.malamou\source\repos\SimpleLocation\SimpleLocation.Models\obj\Debug\net6.0\SimpleLocation.Models.AssemblyInfo.cs
+C:\Users\olivier.malamou\source\repos\SimpleLocation\SimpleLocation.Models\obj\Debug\net6.0\SimpleLocation.Models.csproj.CoreCompileInputs.cache
+C:\Users\olivier.malamou\source\repos\SimpleLocation\SimpleLocation.Models\obj\Debug\net6.0\SimpleLocation.Models.dll
+C:\Users\olivier.malamou\source\repos\SimpleLocation\SimpleLocation.Models\obj\Debug\net6.0\refint\SimpleLocation.Models.dll
+C:\Users\olivier.malamou\source\repos\SimpleLocation\SimpleLocation.Models\obj\Debug\net6.0\SimpleLocation.Models.pdb
+C:\Users\olivier.malamou\source\repos\SimpleLocation\SimpleLocation.Models\obj\Debug\net6.0\ref\SimpleLocation.Models.dll

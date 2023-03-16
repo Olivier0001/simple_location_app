@@ -1,0 +1,12 @@
+C:\Users\olivier.malamou\source\repos\SimpleLocation\SimpleLocation.Utility\bin\Debug\net6.0\SimpleLocation.Utility.deps.json
+C:\Users\olivier.malamou\source\repos\SimpleLocation\SimpleLocation.Utility\bin\Debug\net6.0\SimpleLocation.Utility.dll
+C:\Users\olivier.malamou\source\repos\SimpleLocation\SimpleLocation.Utility\bin\Debug\net6.0\SimpleLocation.Utility.pdb
+C:\Users\olivier.malamou\source\repos\SimpleLocation\SimpleLocation.Utility\obj\Debug\net6.0\SimpleLocation.Utility.csproj.AssemblyReference.cache
+C:\Users\olivier.malamou\source\repos\SimpleLocation\SimpleLocation.Utility\obj\Debug\net6.0\SimpleLocation.Utility.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\olivier.malamou\source\repos\SimpleLocation\SimpleLocation.Utility\obj\Debug\net6.0\SimpleLocation.Utility.AssemblyInfoInputs.cache
+C:\Users\olivier.malamou\source\repos\SimpleLocation\SimpleLocation.Utility\obj\Debug\net6.0\SimpleLocation.Utility.AssemblyInfo.cs
+C:\Users\olivier.malamou\source\repos\SimpleLocation\SimpleLocation.Utility\obj\Debug\net6.0\SimpleLocation.Utility.csproj.CoreCompileInputs.cache
+C:\Users\olivier.malamou\source\repos\SimpleLocation\SimpleLocation.Utility\obj\Debug\net6.0\SimpleLocation.Utility.dll
+C:\Users\olivier.malamou\source\repos\SimpleLocation\SimpleLocation.Utility\obj\Debug\net6.0\refint\SimpleLocation.Utility.dll
+C:\Users\olivier.malamou\source\repos\SimpleLocation\SimpleLocation.Utility\obj\Debug\net6.0\SimpleLocation.Utility.pdb
+C:\Users\olivier.malamou\source\repos\SimpleLocation\SimpleLocation.Utility\obj\Debug\net6.0\ref\SimpleLocation.Utility.dll

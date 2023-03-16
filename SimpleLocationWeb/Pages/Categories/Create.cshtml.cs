@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using SimpleLocationWeb.Data;
-using SimpleLocationWeb.NewFolder;
+using SimpleLocation.Models;
+using SimpleLocationWeb.DateAccess.Data;
 
 namespace SimpleLocationWeb.Pages.Categories
 {

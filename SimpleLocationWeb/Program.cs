@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using SimpleLocationWeb.Data;
+using SimpleLocationWeb.DateAccess.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
