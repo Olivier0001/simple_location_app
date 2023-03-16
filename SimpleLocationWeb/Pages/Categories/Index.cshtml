@@ -1,18 +1,20 @@
 ﻿@page
 @model SimpleLocationWeb.Pages.Categories.IndexModel
 
-@*<div class="container p-3">
+<div class="container p-3">
     <div class="row pt-4">
         <div class="col-6">
             <h2 class="text-primary">Category List</h2>
         </div>
         <div class="col-6">
-
+            <a asp-page="create" class="btn btn-primary">
+                Create New Category
+            </a>
         </div>
     </div>
     <br /><br />
 
-    <table>
+    <table class="table table-bordered table-striped" style="width:100%">
         <thead>
             <tr>
                 <th>
@@ -27,11 +29,11 @@
             @foreach(var obj in Model.Categories)
             {
                 <tr>
-                    <td>@obj.Name</td>
-                    <td>@obj.DisplayOrder</td>
+                    <td width="50%">@obj.Name</td>
+                    <td width="30%">@obj.DisplayOrder</td>
                 </tr>
             }
             
         </tbody>
     </table>
-</div>*@
+</div>
