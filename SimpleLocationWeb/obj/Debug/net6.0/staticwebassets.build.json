@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Td7k9f+Z021U+djvxspzxMeM/6KSSfu+u0eQu/cBWtE=",
+  "Hash": "tc/S3sZ9vKtUMRFINZbITJufZBSpkM4TEA2VYVR3xBQ=",
   "Source": "SimpleLocationWeb",
   "BasePath": "_content/SimpleLocationWeb",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\SimpleLocationWeb.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\css\\bootswatch_lux.css",
+      "SourceId": "SimpleLocationWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\",
+      "BasePath": "_content/SimpleLocationWeb",
+      "RelativePath": "css/bootswatch_lux.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\bootswatch_lux.css"
     },
     {
       "Identity": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\css\\site.css",
