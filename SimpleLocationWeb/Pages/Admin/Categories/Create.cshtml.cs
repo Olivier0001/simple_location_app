@@ -1,21 +1,22 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using SimpleLocation.DataAccess.Repository.IRepository;
 using SimpleLocation.Models;
 using SimpleLocationWeb.DateAccess.Data;
 
-namespace SimpleLocationWeb.Pages.Categories
+namespace SimpleLocationWeb.Pages.Admin.Categories
 {
     [BindProperties]
     public class CreateModel : PageModel
     {
-        private readonly ApplicationDbContext _db;
+        private readonly IUnitOfWork _unitOfWork;
 
         [BindProperty]
         public Category Category { get; set; }
 
-        public CreateModel(ApplicationDbContext db)
+        public CreateModel(IUnitOfWork UnitOfWork)
         {
-            _db = db;
+            _unitOfWork = UnitOfWork;
         }
 
         public void OnGet()
@@ -30,10 +31,10 @@ namespace SimpleLocationWeb.Pages.Categories
             }
             if(ModelState.IsValid)
             {
-                await _db.Category.AddAsync(Category);
-                await _db.SaveChangesAsync();
+                _unitOfWork.Category.Add(Category);
+                _unitOfWork.Save();
                 TempData["success"] = "Category created successfully";
-                return RedirectToPage("/Categories/Index");
+                return RedirectToPage("/Admin/Categories/Index");
             }
             return Page();
         }

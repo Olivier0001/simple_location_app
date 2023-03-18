@@ -1,22 +1,26 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using SimpleLocation.DataAccess.Repository.IRepository;
 using SimpleLocation.Models;
 using SimpleLocationWeb.DateAccess.Data;
 
-namespace SimpleLocationWeb.Pages.Categories
+namespace SimpleLocationWeb.Pages.Admin.Categories
 {
     public class IndexModel : PageModel
     {
-        private readonly ApplicationDbContext _db;
+        private readonly IUnitOfWork _unitOfWork;
+
+        [BindProperty]
         public IEnumerable<Category> Categories { get; set; }
-        public IndexModel(ApplicationDbContext db)
+
+        public IndexModel(IUnitOfWork UnitOfWork)
         {
-            _db = db;
+            _unitOfWork = UnitOfWork;
         }
 
         public void OnGet()
         {
-            Categories = _db.Category;
+            Categories = _unitOfWork.Category.GetAll();
         }
     }
 }
