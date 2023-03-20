@@ -10,6 +10,7 @@ namespace SimpleLocation.DataAccess.Repository.IRepository
     {
         ICategoryRepository Category { get; }
         ICarTypeRepository CarType { get; }
+        IMenuItemRepository MenuItem { get; }
         void Save();
     }
 }

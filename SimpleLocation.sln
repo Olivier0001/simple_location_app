@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32819.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleLocationWeb", "SimpleLocationWeb\SimpleLocationWeb.csproj", "{11DC8CCD-0AD2-4D7F-A618-897503B77B98}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleLocationWeb", "SimpleLocationWeb\SimpleLocationWeb.csproj", "{11DC8CCD-0AD2-4D7F-A618-897503B77B98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleLocation.DataAccess", "SimpleLocationDataAccess\SimpleLocation.DataAccess.csproj", "{C98078FA-D9C9-49CD-B67F-5BD604BEECE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleLocation.DataAccess", "SimpleLocationDataAccess\SimpleLocation.DataAccess.csproj", "{C98078FA-D9C9-49CD-B67F-5BD604BEECE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleLocation.Models", "SimpleLocation.Models\SimpleLocation.Models.csproj", "{211B17B9-1F74-4DEF-8E36-31C991EADA2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleLocation.Models", "SimpleLocation.Models\SimpleLocation.Models.csproj", "{211B17B9-1F74-4DEF-8E36-31C991EADA2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleLocation.Utility", "SimpleLocation.Utility\SimpleLocation.Utility.csproj", "{FC07114A-838C-46A8-8480-EB8EEBB629D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleLocation.Utility", "SimpleLocation.Utility\SimpleLocation.Utility.csproj", "{FC07114A-838C-46A8-8480-EB8EEBB629D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
