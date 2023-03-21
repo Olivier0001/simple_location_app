@@ -5,7 +5,7 @@ using SimpleLocation.DataAccess.Repository.IRepository;
 using SimpleLocation.Models;
 using SimpleLocationWeb.DateAccess.Data;
 
-namespace SimpleLocationWeb.Pages.Admin.CarTypes
+namespace SimpleLocationWeb.Pages.Admin.CarBrands
 {
     [BindProperties]
     public class CreateModel : PageModel
@@ -13,7 +13,7 @@ namespace SimpleLocationWeb.Pages.Admin.CarTypes
         private readonly IUnitOfWork _unitOfWork;
 
         [BindProperty]
-        public CarType CarType { get; set; }
+        public CarBrand CarBrand { get; set; }
 
         public CreateModel(IUnitOfWork unitOfWork)
         {
@@ -26,13 +26,13 @@ namespace SimpleLocationWeb.Pages.Admin.CarTypes
 
         public async Task<IActionResult> OnPost()
         {
-           
-            if(ModelState.IsValid)
+
+            if (ModelState.IsValid)
             {
-                _unitOfWork.CarType.Add(CarType);
+                _unitOfWork.CarBrand.Add(CarBrand);
                 _unitOfWork.Save();
-                TempData["success"] = "CarType created successfully";
-                return RedirectToPage("/Admin/CarTypes/Index");
+                TempData["success"] = "CarBrand created successfully";
+                return RedirectToPage("/Admin/CarBrands/Index");
             }
             return Page();
         }

@@ -16,13 +16,13 @@ namespace SimpleLocation.DataAccess.Repository
         {
             _db = db;
             Category = new CategoryRepository(_db);
-            CarType = new CarTypeRepository(_db);
-            MenuItem = new MenuItemRepository(_db);
+            CarBrand = new CarBrandRepository(_db);
+            Car = new CarRepository(_db);
         }
 
         public ICategoryRepository Category { get; private set; }
-        public ICarTypeRepository CarType { get; private set; }
-        public IMenuItemRepository MenuItem { get; private set; }
+        public ICarBrandRepository CarBrand { get; private set; }
+        public ICarRepository Car { get; private set; }
 
         public void Dispose()
         {

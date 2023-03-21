@@ -4,14 +4,14 @@ using SimpleLocation.DataAccess.Repository.IRepository;
 using SimpleLocation.Models;
 using SimpleLocationWeb.DateAccess.Data;
 
-namespace SimpleLocationWeb.Pages.Admin.CarTypes
+namespace SimpleLocationWeb.Pages.Admin.CarBrands
 {
     public class IndexModel : PageModel
     {
         private readonly IUnitOfWork _unitOfWork;
 
         [BindProperty]
-        public IEnumerable<CarType> CarTypes { get; set; }
+        public IEnumerable<CarBrand> CarBrands { get; set; }
 
         public IndexModel(IUnitOfWork UnitOfWork)
         {
@@ -20,7 +20,7 @@ namespace SimpleLocationWeb.Pages.Admin.CarTypes
 
         public void OnGet()
         {
-            CarTypes = _unitOfWork.CarType.GetAll();
+            CarBrands = _unitOfWork.CarBrand.GetAll();
         }
     }
 }

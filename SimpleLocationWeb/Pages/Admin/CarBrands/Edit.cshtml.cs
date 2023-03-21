@@ -5,24 +5,24 @@ using SimpleLocation.DataAccess.Repository;
 using SimpleLocation.Models;
 using SimpleLocationWeb.DateAccess.Data;
 
-namespace SimpleLocationWeb.Pages.Admin.CarTypes
+namespace SimpleLocationWeb.Pages.Admin.CarBrands
 {
     [BindProperties]
-    public class DeleteModel : PageModel
+    public class EditModel : PageModel
     {
         private readonly IUnitOfWork _unitOfWork;
 
         [BindProperty]
-        public CarType CarType { get; set; }
+        public CarBrand CarBrand { get; set; }
 
-        public DeleteModel(IUnitOfWork unitOfWork)
+        public EditModel(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
 
         public void OnGet(int id)
         {
-            CarType = _unitOfWork.CarType.GetFirstOrDefault(u=>u.Id==id);
+            CarBrand = _unitOfWork.CarBrand.GetFirstOrDefault(u => u.Id == id);
             //Category = _db.Category.FirstOrDefault(u=>u.Id==id);
             //Category = _db.Category.SingleOrDefault(u => u.Id == id);
             //Category = _db.Category.Where(u => u.Id == id).FirstOrDefault();
@@ -30,13 +30,13 @@ namespace SimpleLocationWeb.Pages.Admin.CarTypes
 
         public async Task<IActionResult> OnPost()
         {
-            var carTypeFromDb = _unitOfWork.CarType.GetFirstOrDefault(u => u.Id == CarType.Id);
-            if (carTypeFromDb != null)
+
+            if (ModelState.IsValid)
             {
-                _unitOfWork.CarType.Remove(carTypeFromDb);
+                _unitOfWork.CarBrand.Update(CarBrand);
                 _unitOfWork.Save();
-                TempData["success"] = "CarType delete successfully";
-                return RedirectToPage("/Admin/CarTypes/Index");
+                TempData["success"] = "CarBrand update successfully";
+                return RedirectToPage("/Admin/CarBrands/Index");
             }
             return Page();
         }

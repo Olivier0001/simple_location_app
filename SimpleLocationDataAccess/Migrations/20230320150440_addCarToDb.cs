@@ -2,12 +2,12 @@
 
 namespace SimpleLocation.DataAccess.Migrations
 {
-    public partial class addMenuItemToDb : Migration
+    public partial class addCarToDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "MenuItem",
+                name: "Car",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -15,21 +15,21 @@ namespace SimpleLocation.DataAccess.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Price = table.Column<double>(type: "float", nullable: false),
-                    CarTypeId = table.Column<int>(type: "int", nullable: false),
+                    Price = table.Column<float>(type: "real", nullable: false),
+                    CarBrandId = table.Column<int>(type: "int", nullable: false),
                     CategoryId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_MenuItem", x => x.Id);
+                    table.PrimaryKey("PK_Car", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_MenuItem_CarType_CarTypeId",
-                        column: x => x.CarTypeId,
-                        principalTable: "CarType",
+                        name: "FK_Car_CarBrand_CarBrandId",
+                        column: x => x.CarBrandId,
+                        principalTable: "CarBrand",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_MenuItem_Category_CategoryId",
+                        name: "FK_Car_Category_CategoryId",
                         column: x => x.CategoryId,
                         principalTable: "Category",
                         principalColumn: "Id",
@@ -37,20 +37,20 @@ namespace SimpleLocation.DataAccess.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_MenuItem_CarTypeId",
-                table: "MenuItem",
-                column: "CarTypeId");
+                name: "IX_Car_CarBrandId",
+                table: "Car",
+                column: "CarBrandId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_MenuItem_CategoryId",
-                table: "MenuItem",
+                name: "IX_Car_CategoryId",
+                table: "Car",
                 column: "CategoryId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "MenuItem");
+                name: "Car");
         }
     }
 }

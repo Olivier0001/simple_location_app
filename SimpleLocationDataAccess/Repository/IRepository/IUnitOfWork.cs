@@ -9,8 +9,8 @@ namespace SimpleLocation.DataAccess.Repository.IRepository
     public interface IUnitOfWork : IDisposable
     {
         ICategoryRepository Category { get; }
-        ICarTypeRepository CarType { get; }
-        IMenuItemRepository MenuItem { get; }
+        ICarBrandRepository CarBrand { get; }
+        ICarRepository Car { get; }
         void Save();
     }
 }

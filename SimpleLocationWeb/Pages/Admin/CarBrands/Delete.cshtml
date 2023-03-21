@@ -1,16 +1,16 @@
 ﻿@page
-@model SimpleLocationWeb.Pages.Admin.CarTypes.DeleteModel
+@model SimpleLocationWeb.Pages.Admin.CarBrands.DeleteModel
 
 <form method="post">
-    <input hidden asp-for="CarType.Id" />
+    <input hidden asp-for="CarBrand.Id" />
     <div class="border p-3 mt-4">
         <div class="row pb-2">
-            <h2 class="text-primary pl-3">Edit CarType</h2>
+            <h2 class="text-primary pl-3">Edit CarBrand</h2>
             <hr />
         </div>
         <div class="mb-3">
-            <label asp-for="CarType.Name"></label>
-            <input type="text" asp-for="CarType.Name" disabled class="form-control" />
+            <label asp-for="CarBrand.Name"></label>
+            <input type="text" asp-for="CarBrand.Name" disabled class="form-control" />
         </div>
         <button type="submit" class="btn btn-danger" style="width:150px">Delete</button>
         <a asp-page="Index" class="btn btn-secondary" style="width:170px">Back to List</a>

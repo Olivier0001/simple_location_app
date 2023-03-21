@@ -2,7 +2,7 @@
 $(document).ready(function () {
    dataTable= $('#DT_load').DataTable({
         "ajax": {
-            "url": "/api/MenuItem",
+            "url": "/api/Car",
             "type": "GET",
             "datatype":"json"
         },
@@ -10,13 +10,13 @@ $(document).ready(function () {
             { "data": "name", "width": "25%" },
             { "data": "price", "width": "15%" },
             { "data": "category.name", "width": "15%" },
-            { "data": "carType.name", "width": "15%" },
+            { "data": "carBrand.name", "width": "15%" },
             {
                 "data": "id",
                 "render": function (data) {
                     return  `<div class="w-75 btn-group">
-                             <a href="/Admin/MenuItems/upsert?id=${data}" class="btn btn-success text-white mx-2"> <i class="bi bi-pencil-square"></i></a>
-                             <a onClick=Delete('/api/MenuItem/'+${data}) class="btn btn-danger text-white mx-2"> <i class="bi bi-trash-fill"></i></a>
+                             <a href="/Admin/Cars/upsert?id=${data}" class="btn btn-success text-white mx-2"> <i class="bi bi-pencil-square"></i></a>
+                             <a onClick=Delete('/api/Car/'+${data}) class="btn btn-danger text-white mx-2"> <i class="bi bi-trash-fill"></i></a>
                              </div>`
                 },
 
@@ -45,9 +45,13 @@ function Delete(url) {
                 success: function (data) {
                     if (data.success) {
                         dataTable.ajax.reload();
+                        //success notification
+                        toastr.success(data.message);
+                        
                     }
                     else {
-
+                        //failsure notification
+                        toastr.error(data.message);
                     }
                 }
 

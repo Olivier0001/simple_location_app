@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace SimpleLocation.DataAccess.Repository.IRepository
 {
-    public interface ICarTypeRepository : IRepository<CarType>
+    public interface ICarBrandRepository : IRepository<CarBrand>
     {
-        void Update(CarType obj);
+        void Update(CarBrand obj);
     }
 }

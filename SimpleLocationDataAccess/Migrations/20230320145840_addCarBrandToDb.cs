@@ -2,12 +2,12 @@
 
 namespace SimpleLocation.DataAccess.Migrations
 {
-    public partial class addFoodTypeToDb : Migration
+    public partial class addCarBrandToDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "CarType",
+                name: "CarBrand",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -16,14 +16,14 @@ namespace SimpleLocation.DataAccess.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CarType", x => x.Id);
+                    table.PrimaryKey("PK_CarBrand", x => x.Id);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "CarType");
+                name: "CarBrand");
         }
     }
 }

@@ -15,20 +15,28 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\olivier.malamou\source\repos\SimpleLocation\SimpleLocationWeb
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/olivier.malamou/source/repos/SimpleLocation/SimpleLocationWeb/Pages/Admin/CarTypes/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ2FyVHlwZXNcQ3JlYXRlLmNzaHRtbA==
+[C:/Users/olivier.malamou/source/repos/SimpleLocation/SimpleLocationWeb/Pages/Admin/CarBrands/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ2FyQnJhbmRzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/olivier.malamou/source/repos/SimpleLocation/SimpleLocationWeb/Pages/Admin/CarTypes/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ2FyVHlwZXNcRGVsZXRlLmNzaHRtbA==
+[C:/Users/olivier.malamou/source/repos/SimpleLocation/SimpleLocationWeb/Pages/Admin/CarBrands/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ2FyQnJhbmRzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/olivier.malamou/source/repos/SimpleLocation/SimpleLocationWeb/Pages/Admin/CarTypes/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ2FyVHlwZXNcRWRpdC5jc2h0bWw=
+[C:/Users/olivier.malamou/source/repos/SimpleLocation/SimpleLocationWeb/Pages/Admin/CarBrands/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ2FyQnJhbmRzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/olivier.malamou/source/repos/SimpleLocation/SimpleLocationWeb/Pages/Admin/CarTypes/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ2FyVHlwZXNcSW5kZXguY3NodG1s
+[C:/Users/olivier.malamou/source/repos/SimpleLocation/SimpleLocationWeb/Pages/Admin/CarBrands/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ2FyQnJhbmRzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/olivier.malamou/source/repos/SimpleLocation/SimpleLocationWeb/Pages/Admin/Cars/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ2Fyc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/olivier.malamou/source/repos/SimpleLocation/SimpleLocationWeb/Pages/Admin/Cars/Upsert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ2Fyc1xVcHNlcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/olivier.malamou/source/repos/SimpleLocation/SimpleLocationWeb/Pages/Admin/Categories/Create.cshtml]
@@ -45,14 +53,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/olivier.malamou/source/repos/SimpleLocation/SimpleLocationWeb/Pages/Admin/Categories/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/olivier.malamou/source/repos/SimpleLocation/SimpleLocationWeb/Pages/Admin/MenuItems/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTWVudUl0ZW1zXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/olivier.malamou/source/repos/SimpleLocation/SimpleLocationWeb/Pages/Admin/MenuItems/Upsert.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTWVudUl0ZW1zXFVwc2VydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/olivier.malamou/source/repos/SimpleLocation/SimpleLocationWeb/Pages/Error.cshtml]

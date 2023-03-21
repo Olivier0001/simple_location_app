@@ -1,18 +1,18 @@
 ﻿@page
-@model SimpleLocationWeb.Pages.Admin.CarTypes.EditModel
+@model SimpleLocationWeb.Pages.Admin.CarBrands.EditModel
 
 <form method="post">
-    <input hidden asp-for="CarType.Id" />
+    <input hidden asp-for="CarBrand.Id" />
     <div class="border p-3 mt-4">
         <div class="row pb-2">
-            <h2 class="text-primary pl-3">Edit CarType</h2>
+            <h2 class="text-primary pl-3">Edit CarBrand</h2>
             <hr />
         </div>
         <div asp-validation-summary="All"></div>
         <div class="mb-3">
-            <label asp-for="CarType.Name"></label>
-            <input type="text" asp-for="CarType.Name" class="form-control" />
-            <span asp-validation-for="CarType.Name" class="text-danger"></span>
+            <label asp-for="CarBrand.Name"></label>
+            <input type="text" asp-for="CarBrand.Name" class="form-control" />
+            <span asp-validation-for="CarBrand.Name" class="text-danger"></span>
         </div>
         <button type="submit" class="btn btn-primary" style="width:150px">Edit</button>
         <a asp-page="Index" class="btn btn-secondary" style="width:170px">Back to List</a>

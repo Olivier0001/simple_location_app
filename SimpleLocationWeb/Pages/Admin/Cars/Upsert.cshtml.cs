@@ -6,7 +6,7 @@ using SimpleLocation.DataAccess.Repository.IRepository;
 using SimpleLocation.Models;
 using SimpleLocationWeb.DateAccess.Data;
 
-namespace SimpleLocationWeb.Pages.Admin.MenuItems
+namespace SimpleLocationWeb.Pages.Admin.Cars
 {
     [BindProperties]
     public class UpsertModel : PageModel
@@ -14,32 +14,33 @@ namespace SimpleLocationWeb.Pages.Admin.MenuItems
         private readonly IUnitOfWork _unitOfWork;
         private readonly IWebHostEnvironment _hostEnvironment;
 
-        public MenuItem MenuItem { get; set; }
+        [BindProperty]
+        public Car Car { get; set; }
         public IEnumerable<SelectListItem> CategoryList { get; set; }
-        public IEnumerable<SelectListItem> CarTypeList { get; set; }
+        public IEnumerable<SelectListItem> CarBrandList { get; set; }
 
         public UpsertModel(IUnitOfWork unitOfWork, IWebHostEnvironment hostEnvironment)
         {
             _unitOfWork = unitOfWork;
-            MenuItem = new();
+            Car = new();
             _hostEnvironment = hostEnvironment;
         }
 
-        public void OnGet(int?id)
+        public void OnGet(int? id)
         {
             if (id != null)
             {
                 //Edit
-                MenuItem = _unitOfWork.MenuItem.GetFirstOrDefault(u => u.Id == id);
-            }
+                Car = _unitOfWork.Car.GetFirstOrDefault(u => u.Id == id);
 
+            }
             CategoryList = _unitOfWork.Category.GetAll().Select(i => new SelectListItem() 
             {
                 Text = i.Name,
                 Value = i.Id.ToString()
             });
 
-            CarTypeList = _unitOfWork.CarType.GetAll().Select(i => new SelectListItem()
+            CarBrandList = _unitOfWork.CarBrand.GetAll().Select(i => new SelectListItem()
             {
                 Text = i.Name,
                 Value = i.Id.ToString()
@@ -48,56 +49,58 @@ namespace SimpleLocationWeb.Pages.Admin.MenuItems
 
         public async Task<IActionResult> OnPost()
         {
+
             string webRootPath = _hostEnvironment.WebRootPath;
             var files = HttpContext.Request.Form.Files;
 
-            if (MenuItem.Id == 0)
+            if(Car.Id == 0)
             {
-                // Create
+                //create
                 string fileName_new = Guid.NewGuid().ToString();
-                var uploads = Path.Combine(webRootPath, @"images/menuItems");
+                var uploads = Path.Combine(webRootPath, @"images\cars");
                 var extension = Path.GetExtension(files[0].FileName);
 
-                using (var fileStream = new FileStream(Path.Combine(uploads, fileName_new + extension), FileMode.Create))
+                using (var fileStream = new FileStream(Path.Combine(uploads, fileName_new+extension),FileMode.Create))
                 {
-                    files[0].CopyTo(fileStream);
+                    files[0].CopyTo(fileStream);    
                 }
-                MenuItem.Image = @"\images\menuItems\" + fileName_new + extension;
-                _unitOfWork.MenuItem.Add(MenuItem);
+                Car.Image = @"\images\cars\" + fileName_new + extension;
+                _unitOfWork.Car.Add(Car);
                 _unitOfWork.Save();
             }
             else
             {
-                // Edit
-                var objFromDb = _unitOfWork.MenuItem.GetFirstOrDefault(u => u.Id == MenuItem.Id);
+                //Edit
+                var objFromDb = _unitOfWork.Car.GetFirstOrDefault(i => i.Id == Car.Id);
 
                 if (files.Count > 0)
                 {
                     string fileName_new = Guid.NewGuid().ToString();
-                    var uploads = Path.Combine(webRootPath, @"images/menuItems");
+                    var uploads = Path.Combine(webRootPath, @"images\cars");
                     var extension = Path.GetExtension(files[0].FileName);
 
-                    //delete the old image
+                    //Delete the old image
                     var oldImagePath = Path.Combine(webRootPath, objFromDb.Image.TrimStart('\\'));
+
                     if (System.IO.File.Exists(oldImagePath))
                     {
                         System.IO.File.Delete(oldImagePath);
                     }
-                    // new upload
+                    //new upload
                     using (var fileStream = new FileStream(Path.Combine(uploads, fileName_new + extension), FileMode.Create))
                     {
                         files[0].CopyTo(fileStream);
                     }
-                    MenuItem.Image = @"\images\menuItems\" + fileName_new + extension;
+                    Car.Image = @"\images\cars\" + fileName_new + extension;
                 }
-                else 
+                else
                 {
-                    MenuItem.Image = objFromDb.Image;
+                    Car.Image = objFromDb.Image;
+
                 }
-                _unitOfWork.MenuItem.Update(MenuItem);
+                _unitOfWork.Car.Update(Car);
                 _unitOfWork.Save();
             }
-
             return RedirectToPage("./Index");
         }
     }

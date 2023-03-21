@@ -9,8 +9,8 @@ using SimpleLocationWeb.DateAccess.Data;
 namespace SimpleLocation.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230317171205_addFoodTypeToDb")]
-    partial class addFoodTypeToDb
+    [Migration("20230320145840_addCarBrandToDb")]
+    partial class addCarBrandToDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,7 +20,7 @@ namespace SimpleLocation.DataAccess.Migrations
                 .HasAnnotation("ProductVersion", "6.0.0-preview.7.21378.4")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("SimpleLocation.Models.CarType", b =>
+            modelBuilder.Entity("SimpleLocation.Models.CarBrand", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -33,7 +33,7 @@ namespace SimpleLocation.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CarType");
+                    b.ToTable("CarBrand");
                 });
 
             modelBuilder.Entity("SimpleLocation.Models.Category", b =>

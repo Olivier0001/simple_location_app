@@ -18,7 +18,44 @@ namespace SimpleLocation.DataAccess.Migrations
                 .HasAnnotation("ProductVersion", "6.0.0-preview.7.21378.4")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("SimpleLocation.Models.CarType", b =>
+            modelBuilder.Entity("SimpleLocation.Models.Car", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CarBrandId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<float>("Price")
+                        .HasColumnType("real");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CarBrandId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("Car");
+                });
+
+            modelBuilder.Entity("SimpleLocation.Models.CarBrand", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -31,7 +68,7 @@ namespace SimpleLocation.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CarType");
+                    b.ToTable("CarBrand");
                 });
 
             modelBuilder.Entity("SimpleLocation.Models.Category", b =>
@@ -53,48 +90,11 @@ namespace SimpleLocation.DataAccess.Migrations
                     b.ToTable("Category");
                 });
 
-            modelBuilder.Entity("SimpleLocation.Models.MenuItem", b =>
+            modelBuilder.Entity("SimpleLocation.Models.Car", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("CarTypeId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Image")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("Price")
-                        .HasColumnType("float");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CarTypeId");
-
-                    b.HasIndex("CategoryId");
-
-                    b.ToTable("MenuItem");
-                });
-
-            modelBuilder.Entity("SimpleLocation.Models.MenuItem", b =>
-                {
-                    b.HasOne("SimpleLocation.Models.CarType", "CarType")
+                    b.HasOne("SimpleLocation.Models.CarBrand", "CarBrand")
                         .WithMany()
-                        .HasForeignKey("CarTypeId")
+                        .HasForeignKey("CarBrandId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -104,7 +104,7 @@ namespace SimpleLocation.DataAccess.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("CarType");
+                    b.Navigation("CarBrand");
 
                     b.Navigation("Category");
                 });

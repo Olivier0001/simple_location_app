@@ -9,18 +9,19 @@ using System.Threading.Tasks;
 
 namespace SimpleLocation.DataAccess.Repository
 {
-    public class CarTypeRepository : Repository<CarType>, ICarTypeRepository
+
+    public class CarBrandRepository : Repository<CarBrand>, ICarBrandRepository
     {
         private readonly ApplicationDbContext _db;
 
-        public CarTypeRepository(ApplicationDbContext db) : base(db)
+        public CarBrandRepository(ApplicationDbContext db) : base(db)
         {
             _db = db;
         }
 
-        public void Update(CarType obj)
+        public void Update(CarBrand obj)
         {
-            var objFromDb = _db.CarType.FirstOrDefault(u => u.Id == obj.Id);
+            var objFromDb = _db.CarBrand.FirstOrDefault(u => u.Id == obj.Id);
             objFromDb.Name = obj.Name;
         }
     }

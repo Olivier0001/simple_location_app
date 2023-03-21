@@ -9,23 +9,23 @@ using System.Threading.Tasks;
 
 namespace SimpleLocation.DataAccess.Repository
 {
-    public class MenuItemRepository : Repository<MenuItem>, IMenuItemRepository
+    public class CarRepository : Repository<Car>, ICarRepository
     {
         private readonly ApplicationDbContext _db;
 
-        public MenuItemRepository(ApplicationDbContext db) : base(db)
+        public CarRepository(ApplicationDbContext db) : base(db)
         {
             _db = db;
         }
 
-        public void Update(MenuItem obj)
+        public void Update(Car obj)
         {
-            var objFromDb = _db.MenuItem.FirstOrDefault(u => u.Id == obj.Id);
+            var objFromDb = _db.Car.FirstOrDefault(u => u.Id == obj.Id);
             objFromDb.Name = obj.Name;
             objFromDb.Description = obj.Description;
             objFromDb.Price = obj.Price;
             objFromDb.CategoryId = obj.CategoryId;
-            objFromDb.CarTypeId = obj.CarTypeId;
+            objFromDb.CarBrandId = obj.CarBrandId;
             if(objFromDb.Image != null)
             {
                 objFromDb.Image = obj.Image;

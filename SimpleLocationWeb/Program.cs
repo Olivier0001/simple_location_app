@@ -2,8 +2,11 @@ using Microsoft.EntityFrameworkCore;
 using SimpleLocation.DataAccess.Repository;
 using SimpleLocation.DataAccess.Repository.IRepository;
 using SimpleLocationWeb.DateAccess.Data;
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
+var cultureInfo = new CultureInfo("en-US");
+
 
 // Add services to the container.
 builder.Services.AddRazorPages()/*.AddRazorRuntimeCompilation()*/;
@@ -20,7 +23,8 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-
+CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
+CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 

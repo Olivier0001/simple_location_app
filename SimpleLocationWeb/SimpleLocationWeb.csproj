@@ -21,7 +21,7 @@
 
   <ItemGroup>
     <Folder Include="Pages\Customer\" />
-    <Folder Include="wwwroot\images\menuItems\" />
+    <Folder Include="wwwroot\images\cars\" />
   </ItemGroup>
 
 </Project>
