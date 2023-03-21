@@ -10,8 +10,7 @@
                     @(Model.Car.Id!=0 ? "Update" : "Create") Car
                 </h2>
                 <hr />
-        
-                @*<div asp-validation-summary="All"></div>*@
+                <div asp-validation-summary="All"></div>
                 <div class="mb-3">
                     <label asp-for="Car.Name"></label>
                     <input type="text" asp-for="Car.Name" class="form-control" />
