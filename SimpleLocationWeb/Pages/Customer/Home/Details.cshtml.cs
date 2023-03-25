@@ -1,11 +1,14 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SimpleLocation.DataAccess.Repository.IRepository;
 using SimpleLocation.Models;
 using System.ComponentModel.DataAnnotations;
+using System.Security.Claims;
 
 namespace SimpleLocationWeb.Pages.Customer.Home
 {
+    [Authorize]
     public class DetailsModel : PageModel
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -15,14 +18,41 @@ namespace SimpleLocationWeb.Pages.Customer.Home
             _unitOfWork = unitOfWork;
         }
 
-        public Car Car { get; set; }
+        [BindProperty]
+        public LocationCarCart LocationCarCart { get; set; }
 
-        [Range(1, 100, ErrorMessage = "Please select a count between 1 and 100")]
-        public int Count { get; set; }
 
         public void OnGet(int id)
         {
-            Car = _unitOfWork.Car.GetFirstOrDefault(u => u.Id == id,includeProperties:"Category,CarBrand");   
+            var claimsIdentity = (ClaimsIdentity)User.Identity;
+            var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+            LocationCarCart = new()
+            {
+                UserId = claim.Value,
+                Car = _unitOfWork.Car.GetFirstOrDefault(u => u.Id == id, includeProperties: "Category,CarBrand"),
+                CarId = id,
+            };
+
+        }
+
+        public IActionResult OnPost()
+        {
+            if (ModelState.IsValid)
+            {
+                LocationCarCart locationCarCartFromDb = _unitOfWork.LocationCarCart.GetFirstOrDefault(
+                    filter: u => u.UserId == LocationCarCart.UserId && u.CarId == LocationCarCart.CarId);
+                if (locationCarCartFromDb == null)
+                {
+                    _unitOfWork.LocationCarCart.Add(LocationCarCart);
+                    _unitOfWork.Save();
+                }
+                else
+                {
+                    _unitOfWork.LocationCarCart.IncrementCount(locationCarCartFromDb, LocationCarCart.Count);
+                }
+                return RedirectToPage("Index");
+            }
+            return Page();
         }
     }
 }

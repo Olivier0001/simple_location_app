@@ -14,5 +14,6 @@ namespace SimpleLocationWeb.DateAccess.Data
         public DbSet<CarBrand> CarBrand { get; set; }
         public DbSet<Car> Car { get; set; }
         public DbSet<User> User { get; set; }
+        public DbSet<LocationCarCart> LocationCarCart { get; set; }
     }
 }

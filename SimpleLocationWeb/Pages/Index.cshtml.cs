@@ -16,5 +16,10 @@ namespace SimpleLocationWeb.Pages
         {
             return RedirectToPage("Customer/Home/Index");
         }
+
+        //public void OnGet()
+        //{
+
+        //}
     }
 }

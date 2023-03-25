@@ -11,6 +11,7 @@ namespace SimpleLocation.DataAccess.Repository.IRepository
         ICategoryRepository Category { get; }
         ICarBrandRepository CarBrand { get; }
         ICarRepository Car { get; }
+        ILocationCarCartRepository LocationCarCart { get; }
         void Save();
     }
 }

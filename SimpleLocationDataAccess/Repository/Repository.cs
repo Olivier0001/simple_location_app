@@ -19,7 +19,7 @@ namespace SimpleLocation.DataAccess.Repository
         {
             _db = db;
             //CarType, Category
-            //_db.Car.Include(u => u.CarBrand).Include(u => u.Category);
+            //_db.ShoppingCart.Include(u => u.Car).ThenInclude(u => u.Category);
             //_db.Car.OrderBy(u => u.Name);
             this.dbSet = db.Set<T>();
         }
