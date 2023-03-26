@@ -19,12 +19,16 @@ namespace SimpleLocation.DataAccess.Repository
             CarBrand = new CarBrandRepository(_db);
             Car = new CarRepository(_db);
             LocationCarCart = new LocationCarCartRepository(_db);
+            OrderDetails = new OrderDetailsRepository(_db);
+            OrderHeader = new OrderHeaderRepository(_db);
         }
 
         public ICategoryRepository Category { get; private set; }
         public ICarBrandRepository CarBrand { get; private set; }
         public ICarRepository Car { get; private set; }
         public ILocationCarCartRepository LocationCarCart { get; private set; }
+        public IOrderHeaderRepository OrderHeader { get; private set; }
+        public IOrderDetailsRepository OrderDetails { get; private set; }
 
         public void Dispose()
         {
