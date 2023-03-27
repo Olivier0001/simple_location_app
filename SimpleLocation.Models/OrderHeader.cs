@@ -33,7 +33,6 @@ namespace SimpleLocation.Models
         public DateTime PickUpTime { get; set; }
 
         [Required]
-        [NotMapped]
         public DateTime PickUpDate { get; set; }
 
         [Required]
@@ -41,7 +40,6 @@ namespace SimpleLocation.Models
         public DateTime PickTimeOfReturn { get; set; }
 
         [Required]
-        [NotMapped]
         public DateTime PickDateOfReturn { get; set; }
 
         public string Status { get; set; }
@@ -51,9 +49,12 @@ namespace SimpleLocation.Models
         public string? TransactionId { get; set; }
 
         [Display(Name = "Pickup Name")]
+        [Required]
         public string PickupName { get; set; }
 
+       
         [Display(Name = "Phone Number")]
+        [Required]
         public string PhoneNumber { get; set; }
     }
 }

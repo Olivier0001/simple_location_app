@@ -382,7 +382,13 @@ namespace SimpleLocation.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("PickDateOfReturn")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime>("PickTimeOfReturn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("PickUpDate")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("PickUpTime")

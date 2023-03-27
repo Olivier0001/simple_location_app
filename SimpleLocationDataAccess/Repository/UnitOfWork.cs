@@ -21,6 +21,7 @@ namespace SimpleLocation.DataAccess.Repository
             LocationCarCart = new LocationCarCartRepository(_db);
             OrderDetails = new OrderDetailsRepository(_db);
             OrderHeader = new OrderHeaderRepository(_db);
+            User = new UserRepository(_db);
         }
 
         public ICategoryRepository Category { get; private set; }
@@ -29,6 +30,7 @@ namespace SimpleLocation.DataAccess.Repository
         public ILocationCarCartRepository LocationCarCart { get; private set; }
         public IOrderHeaderRepository OrderHeader { get; private set; }
         public IOrderDetailsRepository OrderDetails { get; private set; }
+        public IUserRepository User { get; private set; }
 
         public void Dispose()
         {

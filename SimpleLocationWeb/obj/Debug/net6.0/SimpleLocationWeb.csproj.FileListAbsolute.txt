@@ -562,3 +562,4 @@ C:\Users\olivier.malamou\source\repos\SimpleLocation\SimpleLocationWeb\bin\Debug
 C:\Users\olivier.malamou\source\repos\SimpleLocation\SimpleLocationWeb\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\olivier.malamou\source\repos\SimpleLocation\SimpleLocationWeb\bin\Debug\net6.0\SimpleLocation.Utility.dll
 C:\Users\olivier.malamou\source\repos\SimpleLocation\SimpleLocationWeb\bin\Debug\net6.0\SimpleLocation.Utility.pdb
+C:\Users\olivier.malamou\source\repos\SimpleLocation\SimpleLocationWeb\bin\Debug\net6.0\Stripe.net.dll

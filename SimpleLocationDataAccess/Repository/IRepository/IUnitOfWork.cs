@@ -13,8 +13,8 @@ namespace SimpleLocation.DataAccess.Repository.IRepository
         ICarRepository Car { get; }
         ILocationCarCartRepository LocationCarCart { get; }
         IOrderDetailsRepository OrderDetails { get; }
-
         IOrderHeaderRepository OrderHeader { get; }
+        IUserRepository User { get; }
         void Save();
     }
 }
