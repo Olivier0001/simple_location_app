@@ -18,5 +18,16 @@ namespace SimpleLocation.DataAccess.Repository
         {
             _db = db;
         }
+
+        public void Update(User obj)
+        {
+            var objFromDb = _db.User.FirstOrDefault(u => u.FirstName == obj.FirstName);
+            objFromDb.UserName = obj.UserName;
+            objFromDb.Email = obj.Email;
+            objFromDb.PhoneNumber = obj.PhoneNumber;
+            objFromDb.FirstName = obj.FirstName;
+            objFromDb.LastName = obj.LastName;
+            
+        }
     }
 }

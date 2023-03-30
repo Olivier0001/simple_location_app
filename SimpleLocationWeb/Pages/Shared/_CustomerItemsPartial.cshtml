@@ -1,0 +1,30 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+
+@if (User.IsInRole("Manager"))
+{
+    <li class="nav-item">
+        <a class="nav-link" asp-area="" asp-page="/Admin/Order/OrderList">Order List</a>
+    </li>
+    <li>
+        <a class="nav-link text-white-50" asp-area="" asp-page="/Customer/Cart/Index">
+            <i class="bi bi-cart"></i>
+        </a>
+    </li>
+}
+@if (User.IsInRole("Customer"))
+{
+    <li>
+        <a class="nav-link text-white-50" asp-area="" asp-page="/Customer/Cart/Index">
+            <i class="bi bi-cart"></i>
+        </a>
+    </li>
+}
+else
+{
+    
+}
+

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "1/XF9Vcc7mhX50s4dNELtAf6JAFC81p04iMlPl+llG8=",
+  "Hash": "5XEO/EZTEipF3I5aiS9wBU9a632rlhsF1RTQox15DR4=",
   "Source": "SimpleLocationWeb",
   "BasePath": "_content/SimpleLocationWeb",
   "Mode": "Default",
@@ -1343,6 +1343,23 @@
       "OriginalItemSpec": "wwwroot\\js\\car.js"
     },
     {
+      "Identity": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\js\\orderList.js",
+      "SourceId": "SimpleLocationWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\",
+      "BasePath": "_content/SimpleLocationWeb",
+      "RelativePath": "js/orderList.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\orderList.js"
+    },
+    {
       "Identity": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\js\\site.js",
       "SourceId": "SimpleLocationWeb",
       "SourceType": "Discovered",
@@ -1358,6 +1375,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\js\\user.js",
+      "SourceId": "SimpleLocationWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\",
+      "BasePath": "_content/SimpleLocationWeb",
+      "RelativePath": "js/user.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\user.js"
     },
     {
       "Identity": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",

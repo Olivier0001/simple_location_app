@@ -143,7 +143,7 @@ namespace SimpleLocationWeb.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     string role = Request.Form["rdUserRole"].ToString();
-                    if(role == SD.EmployeeRole)
+                    if (role == SD.EmployeeRole)
                     {
                         await _userManager.AddToRoleAsync(user, SD.EmployeeRole);
                     }
@@ -185,8 +185,17 @@ namespace SimpleLocationWeb.Areas.Identity.Pages.Account
                     }
                     else
                     {
-                        await _signInManager.SignInAsync(user, isPersistent: false);
-                        return LocalRedirect(returnUrl);
+                        if (User.IsInRole("Manager")) 
+                        {
+                            TempData["success"] = "User create successfully";
+                            return LocalRedirect("~/Admin/Users/Index");
+                        }
+                        else
+                        {
+                            await _signInManager.SignInAsync(user, isPersistent: false);
+                            return LocalRedirect(returnUrl);
+                        }
+                        
                     }
                 }
                 foreach (var error in result.Errors)
