@@ -237,6 +237,10 @@ namespace SimpleLocation.DataAccess.Migrations
                     b.Property<int>("CarBrandId")
                         .HasColumnType("int");
 
+                    b.Property<string>("CarStatus")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
@@ -374,6 +378,10 @@ namespace SimpleLocation.DataAccess.Migrations
 
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("OrderHeaderStatus")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("OrderTotal")
                         .HasColumnType("float");

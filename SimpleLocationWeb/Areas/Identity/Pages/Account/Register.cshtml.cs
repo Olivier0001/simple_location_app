@@ -117,7 +117,7 @@ namespace SimpleLocationWeb.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         }
 
-        public async Task<IActionResult> OnPostAsync(string? returnUrl = null)
+        public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
             returnUrl ??= Url.Content("~/");
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
@@ -185,7 +185,7 @@ namespace SimpleLocationWeb.Areas.Identity.Pages.Account
                     }
                     else
                     {
-                        if (User.IsInRole("Manager")) 
+                        if (User.IsInRole("Manager"))
                         {
                             TempData["success"] = "User create successfully";
                             return LocalRedirect("~/Admin/Users/Index");
@@ -195,7 +195,7 @@ namespace SimpleLocationWeb.Areas.Identity.Pages.Account
                             await _signInManager.SignInAsync(user, isPersistent: false);
                             return LocalRedirect(returnUrl);
                         }
-                        
+
                     }
                 }
                 foreach (var error in result.Errors)

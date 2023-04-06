@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SimpleLocation.DataAccess.Repository;
@@ -7,6 +8,7 @@ using SimpleLocationWeb.DateAccess.Data;
 
 namespace SimpleLocationWeb.Pages.Admin.CarBrands
 {
+    [Authorize(Roles = "Manager")]
     [BindProperties]
     public class CreateModel : PageModel
     {

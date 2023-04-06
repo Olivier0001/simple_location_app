@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SimpleLocation.DataAccess.Repository.IRepository;
@@ -6,6 +7,7 @@ using SimpleLocationWeb.DateAccess.Data;
 
 namespace SimpleLocationWeb.Pages.Admin.Categories
 {
+    [Authorize(Roles = "Manager")]
     public class IndexModel : PageModel
     {
         private readonly IUnitOfWork _unitOfWork;

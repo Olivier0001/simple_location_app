@@ -40,12 +40,12 @@ namespace SimpleLocation.DataAccess.Repository
             if (includeProperties != null)
             {
                 foreach (var includeProperty in includeProperties.Split(
-                    new char[] {','}, StringSplitOptions.RemoveEmptyEntries))
+                    new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
                 {
                     query = query.Include(includeProperty);
                 }
             }
-            if(orderby != null)
+            if (orderby != null)
             {
                 return orderby(query).ToList();
             }
@@ -56,7 +56,7 @@ namespace SimpleLocation.DataAccess.Repository
         public T GetFirstOrDefault(Expression<Func<T, bool>>? filter = null, string? includeProperties = null)
         {
             IQueryable<T> query = dbSet;
-            if(filter != null)
+            if (filter != null)
             {
                 query = query.Where(filter);
             }

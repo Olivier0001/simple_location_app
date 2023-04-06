@@ -11,18 +11,23 @@ using SessionService = Stripe.Checkout.SessionService;
 
 namespace SimpleLocationWeb.Pages.Customer.Cart
 {
-    [Authorize]
     [BindProperties]
     public class SummaryModel : PageModel
     {
         public IEnumerable<LocationCarCart> LocationCarCartList { get; set; }
+        public IEnumerable<Car> CarList { get; set; }
         public OrderHeader OrderHeader { get; set; }
+        public OrderDetails OrderDetails { get; set; }
+
+        public Car Car { get; set; }
+
         private readonly IUnitOfWork _unitOfWork;
 
         public SummaryModel(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
             OrderHeader = new OrderHeader();
+            OrderDetails = new OrderDetails();
         }
 
         public void OnGet()
@@ -41,7 +46,7 @@ namespace SimpleLocationWeb.Pages.Customer.Cart
                 OrderHeader.OrderTotal = Math.Round((OrderHeader.OrderTotal), 2);
 
                 User user = _unitOfWork.User.GetFirstOrDefault(u => u.Id == claim.Value);
-                OrderHeader.PickupName = user.FirstName + " " + user.LastName;
+                OrderHeader.PickupName = user.FirstName;
                 OrderHeader.PhoneNumber = user.PhoneNumber;
             }
         }
@@ -57,7 +62,13 @@ namespace SimpleLocationWeb.Pages.Customer.Cart
                 foreach (var cartItem in LocationCarCartList)
                 {
                     OrderHeader.OrderTotal += (cartItem.Car.Price * cartItem.Count);
+                    Car.CarStatus = cartItem.Car.CarStatus;
+                    cartItem.Car.CarStatus = "Non Disponible";
+                    var test = cartItem.Car;
+                    _unitOfWork.Car.Update(test);
                 }
+
+               
 
                 OrderHeader.OrderTotal = Math.Round((OrderHeader.OrderTotal), 2);
 
@@ -65,6 +76,10 @@ namespace SimpleLocationWeb.Pages.Customer.Cart
                 OrderHeader.OrderDate = DateTime.Now;
                 OrderHeader.UserId = claim.Value;
                 OrderHeader.PickUpTime = Convert.ToDateTime(OrderHeader.PickUpDate.ToShortDateString() + " " + OrderHeader.PickUpTime.ToShortTimeString());
+                OrderHeader.PickUpDate = OrderHeader.PickUpDate;
+                OrderHeader.PickTimeOfReturn = OrderHeader.PickTimeOfReturn;
+                OrderHeader.PickDateOfReturn = OrderHeader.PickDateOfReturn;
+                OrderHeader.OrderHeaderStatus = "Validé";
                 _unitOfWork.OrderHeader.Add(OrderHeader);
                 _unitOfWork.Save();
 
@@ -78,8 +93,12 @@ namespace SimpleLocationWeb.Pages.Customer.Cart
                         Price = item.Car.Price,
                         Count = item.Count
                     };
+                    //string test = OrderDetails.Car.CarStatus;
                     _unitOfWork.OrderDetails.Add(orderDetails);
                 }
+
+
+
                 int quantity = LocationCarCartList.ToList().Count;
                 _unitOfWork.LocationCarCart.RemoveRange(LocationCarCartList);
                 _unitOfWork.Save();

@@ -44,6 +44,21 @@
                     </select>
                     <span asp-validation-for="Car.CarBrandId" class="text-danger"></span>
                 </div>
+                <div class="mb-3">
+                    @if(Model.Car.CarStatus == "")
+                    {
+                        <label asp-for="Car.CarStatus"></label>
+                        <input type="text" asp-for="Car.CarStatus" class="form-control" />
+                        <span asp-validation-for="Car.CarStatus" class="text-danger"></span>
+                    }
+                    @if (Model.Car.CarStatus != null)
+                    {
+                        <label asp-for="Car.CarStatus"></label>
+                        <input type="text" asp-for="Car.CarStatus" class="form-control" />
+                        <span asp-validation-for="Car.CarStatus" class="text-danger"></span>
+                    }
+                    
+                </div>
             </div>
             <div class="col-3">
                 @if (Model.Car.Image != null)
@@ -51,6 +66,7 @@
                     <img src="@Model.Car.Image" width="100%" style="border-radius:5px; border:1px solid #bbb9b9" />
                 }
             </div>
+            
         </div>
         <button type="submit" class="btn btn-primary" style="width:150px">@(Model.Car.Id != 0 ? "Update" : "Create")</button>
         <a asp-page="Index" class="btn btn-secondary" style="width:170px">Back to List</a>

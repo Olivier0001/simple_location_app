@@ -20,10 +20,10 @@ namespace SimpleLocationWeb.Controllers
         [Authorize]
         public IActionResult Index()
         {
-            var OrderHeaderList = _unitOfWork.OrderHeader.GetAll(includeProperties:"User");
+            var OrderHeaderList = _unitOfWork.OrderHeader.GetAll(includeProperties: "User");
             return Json(new { data = OrderHeaderList });
         }
 
-        
+
     }
 }

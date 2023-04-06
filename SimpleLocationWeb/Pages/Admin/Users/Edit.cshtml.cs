@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -8,6 +9,7 @@ using SimpleLocationWeb.DateAccess.Data;
 
 namespace SimpleLocationWeb.Pages.Admin.Users
 {
+    [Authorize(Roles = "Manager,Employee")]
     [BindProperties]
     public class EditModel : PageModel
     {
@@ -15,7 +17,7 @@ namespace SimpleLocationWeb.Pages.Admin.Users
 
         [BindProperty]
         public User User { get; set; }
-      
+
 
         public EditModel(IUnitOfWork unitOfWork)
         {

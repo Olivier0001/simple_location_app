@@ -1,13 +1,16 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using SimpleLocation.DataAccess.Repository;
 using SimpleLocation.DataAccess.Repository.IRepository;
 using SimpleLocation.Models;
+using SimpleLocation.Utility;
 using SimpleLocationWeb.DateAccess.Data;
 
 namespace SimpleLocationWeb.Pages.Admin.Users
 {
+    [Authorize(Roles = "Manager")]
     [BindProperties]
     public class DeleteModel : PageModel
     {
@@ -15,7 +18,7 @@ namespace SimpleLocationWeb.Pages.Admin.Users
 
         [BindProperty]
         public User User { get; set; }
-      
+
 
         public DeleteModel(IUnitOfWork unitOfWork)
         {
@@ -33,13 +36,13 @@ namespace SimpleLocationWeb.Pages.Admin.Users
             }
         }
 
-        
+
 
         public async Task<IActionResult> OnPost()
         {
+            
 
-
-            if(User.Id != null)
+            if (User.Id != null)
             {
                 //Delete
                 var objFromDb = _unitOfWork.User.GetFirstOrDefault(i => i.Id == User.Id);
@@ -47,7 +50,7 @@ namespace SimpleLocationWeb.Pages.Admin.Users
                 _unitOfWork.Save();
                 TempData["success"] = "User delete successfully";
             }
-            
+
             return RedirectToPage("./Index");
         }
     }

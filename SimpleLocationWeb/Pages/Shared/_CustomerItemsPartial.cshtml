@@ -1,22 +1,20 @@
 ﻿@using Microsoft.AspNetCore.Identity
-
+@using SimpleLocation.Utility
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
 
 
-@if (User.IsInRole("Manager"))
+@if (User.IsInRole("Manager") || User.IsInRole("Employee"))
 {
     <li class="nav-item">
         <a class="nav-link" asp-area="" asp-page="/Admin/Order/OrderList">Order List</a>
     </li>
-    <li>
-        <a class="nav-link text-white-50" asp-area="" asp-page="/Customer/Cart/Index">
-            <i class="bi bi-cart"></i>
-        </a>
-    </li>
 }
 @if (User.IsInRole("Customer"))
 {
+    <li class="nav-item">
+        <a class="nav-link" asp-area="" asp-page="/Customer/OrderCustomer/OrderCustomerList">Order Customer List</a>
+    </li>
     <li>
         <a class="nav-link text-white-50" asp-area="" asp-page="/Customer/Cart/Index">
             <i class="bi bi-cart"></i>

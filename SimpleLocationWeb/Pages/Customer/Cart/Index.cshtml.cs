@@ -4,13 +4,13 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using SimpleLocation.DataAccess.Repository.IRepository;
 using SimpleLocation.Models;
+using SimpleLocation.Utility;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Security.Claims;
 
 namespace SimpleLocationWeb.Pages.Customer.Cart
 {
-    [Authorize]
     public class IndexModel : PageModel
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -55,8 +55,11 @@ namespace SimpleLocationWeb.Pages.Customer.Cart
             var cart = _unitOfWork.LocationCarCart.GetFirstOrDefault(u => u.Id == cartId);
             if (cart.Count == 1)
             {
+                var count = _unitOfWork.LocationCarCart.GetAll(u => u.UserId == cart.UserId).ToList().Count - 1;
+
                 _unitOfWork.LocationCarCart.Remove(cart);
                 _unitOfWork.Save();
+                HttpContext.Session.SetInt32(SD.SessionCart, count);
             }
             else
             {
@@ -69,8 +72,10 @@ namespace SimpleLocationWeb.Pages.Customer.Cart
         public IActionResult OnPostRemove(int cartId)
         {
             var cart = _unitOfWork.LocationCarCart.GetFirstOrDefault(u => u.Id == cartId);
+            var count = _unitOfWork.LocationCarCart.GetAll(u => u.UserId == cart.UserId).ToList().Count - 1;
             _unitOfWork.LocationCarCart.Remove(cart);
             _unitOfWork.Save();
+            HttpContext.Session.SetInt32(SD.SessionCart, count);
             return RedirectToPage("/Customer/Cart/Index");
         }
     }

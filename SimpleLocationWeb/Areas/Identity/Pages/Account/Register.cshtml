@@ -71,13 +71,13 @@
                 }
                 else
                 {
-                    
+                  
                 }
             }
             
             <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
             @{
-                if (User.IsInRole("Manager"))
+                if (User.IsInRole("Manager") || User.IsInRole("Employee"))
                 {
                     <a asp-page="../Admin/Users/Index" class="btn btn-secondary">Back to List</a>
                 }
@@ -88,7 +88,7 @@
         <section>
             
             @{
-                if (User.IsInRole("Manager"))
+                if (User.IsInRole("Manager") || User.IsInRole("Employee"))
                 {
 
 

@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SimpleLocation.DataAccess.Repository.IRepository;
@@ -6,6 +7,7 @@ using SimpleLocationWeb.DateAccess.Data;
 
 namespace SimpleLocationWeb.Pages.Admin.Categories
 {
+    [Authorize(Roles = "Manager")]
     [BindProperties]
     public class CreateModel : PageModel
     {
@@ -25,11 +27,11 @@ namespace SimpleLocationWeb.Pages.Admin.Categories
 
         public async Task<IActionResult> OnPost()
         {
-            if(Category.Name == Category.DisplayOrder.ToString())
+            if (Category.Name == Category.DisplayOrder.ToString())
             {
                 ModelState.AddModelError("Category.Name", "The displayOrder cannot exactly match the name");
             }
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 _unitOfWork.Category.Add(Category);
                 _unitOfWork.Save();

@@ -12,8 +12,8 @@ using SimpleLocationWeb.DateAccess.Data;
 namespace SimpleLocation.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230324181530_addLocationCarCartToDb")]
-    partial class addLocationCarCartToDb
+    [Migration("20230403114009_User")]
+    partial class User
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -239,6 +239,10 @@ namespace SimpleLocation.DataAccess.Migrations
                     b.Property<int>("CarBrandId")
                         .HasColumnType("int");
 
+                    b.Property<string>("CarStatus")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
@@ -301,33 +305,6 @@ namespace SimpleLocation.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Category");
-                });
-
-            modelBuilder.Entity("SimpleLocation.Models.LocationCarCart", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("CarId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Count")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CarId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("LocationCarCart");
                 });
 
             modelBuilder.Entity("SimpleLocation.Models.User", b =>
@@ -413,25 +390,6 @@ namespace SimpleLocation.DataAccess.Migrations
                     b.Navigation("CarBrand");
 
                     b.Navigation("Category");
-                });
-
-            modelBuilder.Entity("SimpleLocation.Models.LocationCarCart", b =>
-                {
-                    b.HasOne("SimpleLocation.Models.Car", "Car")
-                        .WithMany()
-                        .HasForeignKey("CarId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SimpleLocation.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Car");
-
-                    b.Navigation("User");
                 });
 #pragma warning restore 612, 618
         }

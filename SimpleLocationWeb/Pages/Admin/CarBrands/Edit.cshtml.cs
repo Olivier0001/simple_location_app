@@ -4,9 +4,11 @@ using SimpleLocation.DataAccess.Repository.IRepository;
 using SimpleLocation.DataAccess.Repository;
 using SimpleLocation.Models;
 using SimpleLocationWeb.DateAccess.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SimpleLocationWeb.Pages.Admin.CarBrands
 {
+    [Authorize(Roles = "Manager")]
     [BindProperties]
     public class EditModel : PageModel
     {

@@ -59,7 +59,7 @@
                         Pick Up Time
                     </div>
                     <div class="col-md-9 col-12">
-                        <input asp-for="OrderDetailVM.OrderHeader.PickUpTime" disabled class="form-control" />
+                        <input asp-for="OrderDetailVM.OrderHeader.PickUpTime" type="time"  disabled class="form-control" />
                     </div>
                 </div>
                 <div class="form-group row py-1">
@@ -67,7 +67,7 @@
                         Pick Time Of Return
                     </div>
                     <div class="col-md-9 col-12">
-                        <input asp-for="OrderDetailVM.OrderHeader.PickTimeOfReturn" disabled class="form-control" />
+                        <input asp-for="OrderDetailVM.OrderHeader.PickTimeOfReturn" type="time" disabled class="form-control" />
                     </div>
                 </div>
                 <div class="form-group row py-1">
@@ -118,9 +118,12 @@
                                 <small class="text-info">@Model.OrderDetailVM.OrderHeader.OrderTotal</small>
                             </div>
                         </li>
-                    </ul> 
+                    </ul>
+
+                    <button type="submit" class="btn btn-primary" style="width:150px">Delete</button>
+                   
+
             </div>
-            <button type="submit" class="btn btn-primary" style="width:150px">Delete</button>
         </div>
     </div>
 </form>

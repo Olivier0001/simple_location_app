@@ -8,7 +8,7 @@ $(document).ready(function () {
         },
         "columns": [
             { "data": "userName", "width": "25%" },
-            { "data": "email", "width": "15%" },
+            { "data": "email", "width": "25%" },
             { "data": "phoneNumber", "width": "15%" },
             { "data": "firstName", "width": "15%" },
             { "data": "lastName", "width": "15%" },

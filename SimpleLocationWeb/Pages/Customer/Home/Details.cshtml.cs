@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SimpleLocation.DataAccess.Repository.IRepository;
 using SimpleLocation.Models;
+using SimpleLocation.Utility;
 using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
 
@@ -45,12 +46,14 @@ namespace SimpleLocationWeb.Pages.Customer.Home
                 {
                     _unitOfWork.LocationCarCart.Add(LocationCarCart);
                     _unitOfWork.Save();
+                    HttpContext.Session.SetInt32(SD.SessionCart,
+                        _unitOfWork.LocationCarCart.GetAll(u => u.UserId == LocationCarCart.UserId).ToList().Count);
                 }
                 else
                 {
                     _unitOfWork.LocationCarCart.IncrementCount(locationCarCartFromDb, LocationCarCart.Count);
                 }
-                return RedirectToPage("Index");
+                return RedirectToPage("/Customer/Cart/Summary");
             }
             return Page();
         }

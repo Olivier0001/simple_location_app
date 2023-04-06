@@ -26,10 +26,15 @@ namespace SimpleLocation.DataAccess.Repository
             objFromDb.Price = obj.Price;
             objFromDb.CategoryId = obj.CategoryId;
             objFromDb.CarBrandId = obj.CarBrandId;
-            if(objFromDb.Image != null)
+            if (objFromDb.Image != null)
             {
                 objFromDb.Image = obj.Image;
             }
+            if (objFromDb.CarStatus != null)
+            {
+                objFromDb.CarStatus = obj.CarStatus;
+            }
+
         }
     }
 }

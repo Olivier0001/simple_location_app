@@ -1,0 +1,40 @@
+﻿@page
+@model SimpleLocationWeb.Pages.Customer.OrderCustomer.OrderCustomerListModel
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Order Customer List</h2>
+        </div>
+        <div class="col-6 text-end">
+        </div>
+    </div>
+    <br /><br />
+
+    <table class="table table-bordered table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th>Order Date</th>
+                <th>Order Total</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model.OrderHeaders)
+            {
+                <tr>
+                    <td width="50%">@obj.OrderDate.ToString("dd/MM/yyyy")</td>
+                    <td width="50%">@obj.OrderTotal</td>
+                    <td>
+                        <div class="w-75 btn-group" role="group">
+                            <a asp-page="/Customer/OrderCustomer/OrderCustomerDetails" asp-route-id="@obj.Id" class="btn btn-primary mx-2">
+                                <i class="bi bi-pencil-square"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>

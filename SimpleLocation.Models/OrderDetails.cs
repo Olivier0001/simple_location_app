@@ -21,7 +21,7 @@ namespace SimpleLocation.Models
         [Required]
         public int CarId { get; set; }
         [ForeignKey("CarId")]
-        public virtual Car Car { get; set; }
+        public Car Car { get; set; }
 
         public int Count { get; set; }
 

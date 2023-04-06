@@ -9,19 +9,20 @@ namespace SimpleLocationWeb.Pages.Customer.Home
     public class IndexModel : PageModel
     {
         private readonly IUnitOfWork _unitOfWork;
+        public Car Car { get; set; }
 
         public IndexModel(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
-         
+
         public IEnumerable<Car> CarList { get; set; }
         public IEnumerable<Category> CategoryList { get; set; }
 
         public void OnGet()
         {
             CarList = _unitOfWork.Car.GetAll(includeProperties: "Category,CarBrand");
-            CategoryList = _unitOfWork.Category.GetAll(orderby: u=>u.OrderBy(c=>c.DisplayOrder));
+            CategoryList = _unitOfWork.Category.GetAll(orderby: u => u.OrderBy(c => c.DisplayOrder));
         }
     }
 }

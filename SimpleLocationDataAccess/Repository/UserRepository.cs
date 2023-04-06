@@ -27,7 +27,7 @@ namespace SimpleLocation.DataAccess.Repository
             objFromDb.PhoneNumber = obj.PhoneNumber;
             objFromDb.FirstName = obj.FirstName;
             objFromDb.LastName = obj.LastName;
-            
+
         }
     }
 }

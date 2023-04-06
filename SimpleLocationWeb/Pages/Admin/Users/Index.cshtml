@@ -8,11 +8,19 @@
         <div class="col-6">
             <h2 class="text-primary">User List</h2>
         </div>
-        <div class="col-6 text-end">
-            <a asp-area="Identity" asp-page="/Account/Register" class="btn btn-primary">
-                <i class="bi bi-pencil-square"></i> &nbsp;Create New User
-            </a>
-        </div>
+        @if(User.IsInRole("Employee"))
+        {
+
+        }
+        else
+        {
+            <div class="col-6 text-end">
+                <a asp-area="Identity" asp-page="/Account/Register" class="btn btn-primary">
+                    <i class="bi bi-pencil-square"></i> &nbsp;Create New User
+                </a>
+            </div>
+        }
+        
     </div>
    
     <br /><br />
@@ -24,13 +32,30 @@
                 <th>Phone Number</th>
                 <th>FirstName</th>
                 <th>LastName</th>
-                <th></th>
+                @if (User.IsInRole("Manager"))
+                {
+                    <th></th>
+                }
+                else
+                {
+
+                }
             </tr>
         </thead>
     </table>
 </div>
 
-@section Scripts{
+@if (User.IsInRole("Manager"))
+{
+    @section Scripts{
     <script src="~/js/user.js"></script>
+    }
 }
+else
+{
+    @section Scripts{
+    <script src="~/js/userList.js"></script>
+    }
+}
+
 

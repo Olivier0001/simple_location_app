@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -8,6 +9,7 @@ using SimpleLocationWeb.DateAccess.Data;
 
 namespace SimpleLocationWeb.Pages.Admin.Cars
 {
+    [Authorize(Roles = "Manager")]
     [BindProperties]
     public class UpsertModel : PageModel
     {
@@ -34,7 +36,7 @@ namespace SimpleLocationWeb.Pages.Admin.Cars
                 Car = _unitOfWork.Car.GetFirstOrDefault(u => u.Id == id);
 
             }
-            CategoryList = _unitOfWork.Category.GetAll().Select(i => new SelectListItem() 
+            CategoryList = _unitOfWork.Category.GetAll().Select(i => new SelectListItem()
             {
                 Text = i.Name,
                 Value = i.Id.ToString()
@@ -53,18 +55,19 @@ namespace SimpleLocationWeb.Pages.Admin.Cars
             string webRootPath = _hostEnvironment.WebRootPath;
             var files = HttpContext.Request.Form.Files;
 
-            if(Car.Id == 0)
+            if (Car.Id == 0)
             {
                 //create
                 string fileName_new = Guid.NewGuid().ToString();
                 var uploads = Path.Combine(webRootPath, @"images\cars");
                 var extension = Path.GetExtension(files[0].FileName);
 
-                using (var fileStream = new FileStream(Path.Combine(uploads, fileName_new+extension),FileMode.Create))
+                using (var fileStream = new FileStream(Path.Combine(uploads, fileName_new + extension), FileMode.Create))
                 {
-                    files[0].CopyTo(fileStream);    
+                    files[0].CopyTo(fileStream);
                 }
                 Car.Image = @"\images\cars\" + fileName_new + extension;
+                Car.CarStatus = "Disponible";
                 _unitOfWork.Car.Add(Car);
                 _unitOfWork.Save();
             }

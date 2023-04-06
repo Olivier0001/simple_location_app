@@ -23,7 +23,7 @@ namespace SimpleLocation.DataAccess.Repository
         {
             locationCarCart.Count -= count;
             _db.SaveChanges();
-            return locationCarCart.Count;   
+            return locationCarCart.Count;
         }
 
         public int IncrementCount(LocationCarCart locationCarCart, int count)

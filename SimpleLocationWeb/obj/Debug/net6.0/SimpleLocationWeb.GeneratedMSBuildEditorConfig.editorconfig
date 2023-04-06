@@ -223,10 +223,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cT3JkZXJcT3JkZXJMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/olivier.malamou/source/repos/SimpleLocation/SimpleLocationWeb/Pages/Admin/Users/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcnNcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/olivier.malamou/source/repos/SimpleLocation/SimpleLocationWeb/Pages/Admin/Users/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcnNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -253,6 +249,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/olivier.malamou/source/repos/SimpleLocation/SimpleLocationWeb/Pages/Customer/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/olivier.malamou/source/repos/SimpleLocation/SimpleLocationWeb/Pages/Customer/OrderCustomer/OrderCustomerDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcT3JkZXJDdXN0b21lclxPcmRlckN1c3RvbWVyRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/olivier.malamou/source/repos/SimpleLocation/SimpleLocationWeb/Pages/Customer/OrderCustomer/OrderCustomerList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcT3JkZXJDdXN0b21lclxPcmRlckN1c3RvbWVyTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/olivier.malamou/source/repos/SimpleLocation/SimpleLocationWeb/Pages/Error.cshtml]
