@@ -13,11 +13,11 @@
 @if (User.IsInRole("Customer"))
 {
     <li class="nav-item">
-        <a class="nav-link" asp-area="" asp-page="/Customer/OrderCustomer/OrderCustomerList">Order Customer List</a>
+        <a class="nav-link" asp-area="" asp-page="/Customer/OrderCustomer/OrderCustomerList"><i class="bi bi-list-check iconHeader"></i></a>
     </li>
     <li>
         <a class="nav-link text-white-50" asp-area="" asp-page="/Customer/Cart/Index">
-            <i class="bi bi-cart"></i>
+            <i class="bi bi-cart iconHeader"></i>
         </a>
     </li>
 }
