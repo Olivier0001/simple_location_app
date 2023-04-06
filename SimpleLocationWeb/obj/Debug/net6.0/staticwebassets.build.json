@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YOYG3JdbK9ZkLlOINvk4ZOTnP1NTo/6el+X3vQeE/XA=",
+  "Hash": "pfyyGbmLhSfEEqBqQJIybxk9N805EloNJMihFRCwFdQ=",
   "Source": "SimpleLocationWeb",
   "BasePath": "_content/SimpleLocationWeb",
   "Mode": "Default",
@@ -1307,6 +1307,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\cars\\eef2f2d6-ab43-4d71-9cf3-3301368e9e0d.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\images\\website\\logo.svg",
+      "SourceId": "SimpleLocationWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\",
+      "BasePath": "_content/SimpleLocationWeb",
+      "RelativePath": "images/website/logo.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\website\\logo.svg"
     },
     {
       "Identity": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\js\\car.js",

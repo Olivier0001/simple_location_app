@@ -26,4 +26,16 @@ footer{
     font-size: 30px;
 }
 
+.logo {
+    width: 100px;
+    height: 100px;
+    margin: 0 30px 0 20px;
+}
+
+.container_carStatus {
+    background-color: white;
+    width: 130px;
+    text-align: center;
+    margin: 0 0 0 0;
+}
 
