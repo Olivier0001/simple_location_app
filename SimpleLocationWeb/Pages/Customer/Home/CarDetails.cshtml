@@ -1,0 +1,56 @@
+﻿@page
+@model SimpleLocationWeb.Pages.Customer.Home.CarDetailsModel
+
+<form method="post" enctype="multipart/form-data">
+    <input asp-for="Car.Id" hidden />
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <div class="col-9">
+                <h2 class="text-primary pl-3">
+                    Details Car
+                </h2>
+                <hr />
+                <div asp-validation-summary="All"></div>
+                <div class="mb-3">
+                    <h3>@Model.Car.Name</h3>
+                </div>
+                <br />
+                <div class="mb-3">
+                    <h5><label asp-for="Car.Description"></label>:</h5>
+                    <p>@Model.Car.Description</p>
+                </div>
+                <div class="mb-3">
+                    <h5><label asp-for="Car.Price"></label>:</h5>
+                    <p>@Model.Car.Price €</p>
+                </div>
+            </div>
+            <div class="col-3">
+                @if (Model.Car.Image != null)
+                {
+                    <img src="@Model.Car.Image" width="100%" style="border-radius:5px; border:1px solid #bbb9b9" />
+                }
+            </div>
+
+        </div>
+        <a asp-page="Index" class="btn btn-primary" style="width:170px">Back to List</a>
+    </div>
+</form>
+
+@section Scripts{
+    @* <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
+            toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+            tinycomments_mode: 'embedded',
+            tinycomments_author: 'Author name',
+            mergetags_list: [
+                { value: 'First.Name', title: 'First Name' },
+                { value: 'Email', title: 'Email' },
+            ]
+        });
+    </script>*@
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+    }

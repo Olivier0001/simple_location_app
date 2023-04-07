@@ -3,33 +3,36 @@
 <br />
 <div class="row container pb-3 backgroundWhite">
     @foreach(var category in Model.CategoryList) {
-        <h2 class="text-success pl-1"><b>@category.Name</b></h2>
+        <h2 class=" pl-1 carCategory"><b>@category.Name</b></h2>
         <br />
         <div class="col-12">
             <div class="row my-3">
                 @foreach(var car in Model.CarList.Where(u=>u.CategoryId==category.Id)){
 
                     <div class="col-lg-4 col-md-6 pb-4 filter">
-                        <div class="card bg-black rounded shadow-sm car_card" style="border:1px solid black">
-                            <div class="card-body pb-1 row">
-                                <div class="col-8 h5" style="color: white">@car.Name</div>
-                                <div class="col-4 text-end"><span class="text-info h4">$@car.Price</span></div>
+                        <div class="card bg-black rounded car_card ">
+                            <div class="card-body pb-1">
+                                <div class="col-8 h4" style="color: white">@car.Name</div>
+                                <div class="col-4"><span class="h4 car_price text-black">@car.Price €</span></div>
                             </div>
-                            <img class="card-img-top img-fluid d-block mx-auto mb-3" src="@car.Image" alt="car image" />
+                            <img class="card-img-top img-fluid d-block mx-auto mb-3 car_image" src="@car.Image" alt="car image" />
                             <div class="card-body p-1 px-3 row">
-                                <div class="col-6">
+                                @*<div class="col-6">
                                     <span class="badge p-2 border w-100 text-dark bg-warning" >@category.Name</span>
                                 </div>
                                 <div class="col-6 border-0">
                                     <span class="badge p-2 border w-100 bg-info">@car.CarBrand.Name</span>
-                                </div>
+                                </div>*@
                                 <div class="col-12 pt-2" style="font-size:13px; text-align:justify; color: white">
-                                    <p>@Html.Raw(car.Description)</p>
+                                    <p class=" car_textarea">@Html.Raw(car.Description)</p>
+                                </div>
+                                <div class="col-12 p-1">
+                                    <a asp-page="CarDetails" asp-route-id="@car.Id" class="btn btn-dark form-control btn-sm p-2" style="height:40px; background-color:white; color: black">Détails</a>
                                 </div>
                                 @if (car.CarStatus == "Disponible")
                                 {
                                     <div class="col-12 p-1">
-                                    <a asp-page="Details" asp-route-id="@car.Id" class="btn btn-dark form-control btn-sm p-2" style="height:40px; background-color:white; color: black">View Details</a>
+                                        <a asp-page="Details" asp-route-id="@car.Id" class="btn btn-dark form-control btn-sm p-2" style="height:40px; background-color:white; color: black">Réservez</a>
                                     </div>
                                 }                               
                                 @if (car.CarStatus == "Non Disponible")
@@ -39,15 +42,15 @@
 
                                 @if (car.CarStatus == "Disponible")
                                 {
-                                    <div class="container_carStatus">
-                                        <span style="color:green">@car.CarStatus</span>
+                                    <div class="container_carStatusD">
+                                        <span>@car.CarStatus</span>
                                     </div>
                                     
                                 }
                                 @if (car.CarStatus == "Non Disponible")
                                 {
-                                    <div class="container_carStatus" style="width:150px">
-                                        <span style="color:red">@car.CarStatus</span>
+                                    <div class="container_carStatusND">
+                                        <span>@car.CarStatus</span>
                                     </div>                                 
                                 }
                             </div>

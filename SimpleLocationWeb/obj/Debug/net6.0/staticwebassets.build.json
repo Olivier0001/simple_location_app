@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "pfyyGbmLhSfEEqBqQJIybxk9N805EloNJMihFRCwFdQ=",
+  "Hash": "Ss/PDAq1ROscSDMgVBa3OR2RzdXlLU8II/uvhEQrhbQ=",
   "Source": "SimpleLocationWeb",
   "BasePath": "_content/SimpleLocationWeb",
   "Mode": "Default",
@@ -1122,12 +1122,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\images\\cars\\0883f566-f324-424a-ac33-bbc684216eb8.jfif",
+      "Identity": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\images\\cars\\1534b098-db0c-437f-a62a-a4342c01cedd.jfif",
       "SourceId": "SimpleLocationWeb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\",
       "BasePath": "_content/SimpleLocationWeb",
-      "RelativePath": "images/cars/0883f566-f324-424a-ac33-bbc684216eb8.jfif",
+      "RelativePath": "images/cars/1534b098-db0c-437f-a62a-a4342c01cedd.jfif",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1136,15 +1136,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\cars\\0883f566-f324-424a-ac33-bbc684216eb8.jfif"
+      "OriginalItemSpec": "wwwroot\\images\\cars\\1534b098-db0c-437f-a62a-a4342c01cedd.jfif"
     },
     {
-      "Identity": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\images\\cars\\2123774d-e7d4-4b86-9a78-ddb174853e8a.jfif",
+      "Identity": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\images\\cars\\20278f88-697a-486b-8fed-6d98b4844e37.jpg",
       "SourceId": "SimpleLocationWeb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\",
       "BasePath": "_content/SimpleLocationWeb",
-      "RelativePath": "images/cars/2123774d-e7d4-4b86-9a78-ddb174853e8a.jfif",
+      "RelativePath": "images/cars/20278f88-697a-486b-8fed-6d98b4844e37.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1153,15 +1153,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\cars\\2123774d-e7d4-4b86-9a78-ddb174853e8a.jfif"
+      "OriginalItemSpec": "wwwroot\\images\\cars\\20278f88-697a-486b-8fed-6d98b4844e37.jpg"
     },
     {
-      "Identity": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\images\\cars\\2c941b43-23f6-4a96-9efa-5f41c0a886f7.jfif",
+      "Identity": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\images\\cars\\c3b34345-cbc4-4fff-8d07-1ddb225b65b9.jpg",
       "SourceId": "SimpleLocationWeb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\",
       "BasePath": "_content/SimpleLocationWeb",
-      "RelativePath": "images/cars/2c941b43-23f6-4a96-9efa-5f41c0a886f7.jfif",
+      "RelativePath": "images/cars/c3b34345-cbc4-4fff-8d07-1ddb225b65b9.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1170,15 +1170,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\cars\\2c941b43-23f6-4a96-9efa-5f41c0a886f7.jfif"
+      "OriginalItemSpec": "wwwroot\\images\\cars\\c3b34345-cbc4-4fff-8d07-1ddb225b65b9.jpg"
     },
     {
-      "Identity": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\images\\cars\\2d2f9fb9-5a26-457e-aa8a-73612991d630.jfif",
+      "Identity": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\images\\cars\\d691d4a4-5b43-41d8-924a-7c50ee6a037e.jpg",
       "SourceId": "SimpleLocationWeb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\",
       "BasePath": "_content/SimpleLocationWeb",
-      "RelativePath": "images/cars/2d2f9fb9-5a26-457e-aa8a-73612991d630.jfif",
+      "RelativePath": "images/cars/d691d4a4-5b43-41d8-924a-7c50ee6a037e.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1187,15 +1187,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\cars\\2d2f9fb9-5a26-457e-aa8a-73612991d630.jfif"
+      "OriginalItemSpec": "wwwroot\\images\\cars\\d691d4a4-5b43-41d8-924a-7c50ee6a037e.jpg"
     },
     {
-      "Identity": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\images\\cars\\31dfd8a0-477e-4475-ac59-1e66d006cbc9.jpg",
+      "Identity": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\images\\cars\\e031d568-f457-4ad4-afe0-9b52e1c1d991.jfif",
       "SourceId": "SimpleLocationWeb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\",
       "BasePath": "_content/SimpleLocationWeb",
-      "RelativePath": "images/cars/31dfd8a0-477e-4475-ac59-1e66d006cbc9.jpg",
+      "RelativePath": "images/cars/e031d568-f457-4ad4-afe0-9b52e1c1d991.jfif",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1204,15 +1204,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\cars\\31dfd8a0-477e-4475-ac59-1e66d006cbc9.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\cars\\e031d568-f457-4ad4-afe0-9b52e1c1d991.jfif"
     },
     {
-      "Identity": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\images\\cars\\4f6368a2-c5bc-4113-a315-bce4e81668e1.jpg",
+      "Identity": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\images\\cars\\e3d0f7d2-0f2a-492c-a5d3-ee21b850591c.jfif",
       "SourceId": "SimpleLocationWeb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\",
       "BasePath": "_content/SimpleLocationWeb",
-      "RelativePath": "images/cars/4f6368a2-c5bc-4113-a315-bce4e81668e1.jpg",
+      "RelativePath": "images/cars/e3d0f7d2-0f2a-492c-a5d3-ee21b850591c.jfif",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1221,15 +1221,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\cars\\4f6368a2-c5bc-4113-a315-bce4e81668e1.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\cars\\e3d0f7d2-0f2a-492c-a5d3-ee21b850591c.jfif"
     },
     {
-      "Identity": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\images\\cars\\52e5b5a2-d272-456a-9670-1397cfef7917.jpg",
+      "Identity": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\images\\cars\\e5a1a710-5d68-47da-9d81-4a12bf80dd0a.jpg",
       "SourceId": "SimpleLocationWeb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\",
       "BasePath": "_content/SimpleLocationWeb",
-      "RelativePath": "images/cars/52e5b5a2-d272-456a-9670-1397cfef7917.jpg",
+      "RelativePath": "images/cars/e5a1a710-5d68-47da-9d81-4a12bf80dd0a.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1238,15 +1238,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\cars\\52e5b5a2-d272-456a-9670-1397cfef7917.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\cars\\e5a1a710-5d68-47da-9d81-4a12bf80dd0a.jpg"
     },
     {
-      "Identity": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\images\\cars\\580c723c-3ba7-4d24-a81e-0ca1785c021b.jpg",
+      "Identity": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\images\\cars\\e97a82f6-31cb-492e-a889-cbbe86e10ba2.jpg",
       "SourceId": "SimpleLocationWeb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\",
       "BasePath": "_content/SimpleLocationWeb",
-      "RelativePath": "images/cars/580c723c-3ba7-4d24-a81e-0ca1785c021b.jpg",
+      "RelativePath": "images/cars/e97a82f6-31cb-492e-a889-cbbe86e10ba2.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1255,15 +1255,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\cars\\580c723c-3ba7-4d24-a81e-0ca1785c021b.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\cars\\e97a82f6-31cb-492e-a889-cbbe86e10ba2.jpg"
     },
     {
-      "Identity": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\images\\cars\\5c9ee646-84d1-4fde-94aa-09de83d49c50.jpg",
+      "Identity": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\images\\cars\\eb7c4787-bb1a-4d93-a94b-11cf55be0bb9.jpg",
       "SourceId": "SimpleLocationWeb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\",
       "BasePath": "_content/SimpleLocationWeb",
-      "RelativePath": "images/cars/5c9ee646-84d1-4fde-94aa-09de83d49c50.jpg",
+      "RelativePath": "images/cars/eb7c4787-bb1a-4d93-a94b-11cf55be0bb9.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1272,15 +1272,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\cars\\5c9ee646-84d1-4fde-94aa-09de83d49c50.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\cars\\eb7c4787-bb1a-4d93-a94b-11cf55be0bb9.jpg"
     },
     {
-      "Identity": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\images\\cars\\8b802e16-1b06-4393-b862-6a59e874e988.jpg",
+      "Identity": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\images\\cars\\fbc133b7-22ef-42b9-b010-f4c0b62627d4.jfif",
       "SourceId": "SimpleLocationWeb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\",
       "BasePath": "_content/SimpleLocationWeb",
-      "RelativePath": "images/cars/8b802e16-1b06-4393-b862-6a59e874e988.jpg",
+      "RelativePath": "images/cars/fbc133b7-22ef-42b9-b010-f4c0b62627d4.jfif",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1289,15 +1289,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\cars\\8b802e16-1b06-4393-b862-6a59e874e988.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\cars\\fbc133b7-22ef-42b9-b010-f4c0b62627d4.jfif"
     },
     {
-      "Identity": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\images\\cars\\eef2f2d6-ab43-4d71-9cf3-3301368e9e0d.jpg",
+      "Identity": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\images\\website\\image_login.jpg",
       "SourceId": "SimpleLocationWeb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\",
       "BasePath": "_content/SimpleLocationWeb",
-      "RelativePath": "images/cars/eef2f2d6-ab43-4d71-9cf3-3301368e9e0d.jpg",
+      "RelativePath": "images/website/image_login.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1306,7 +1306,24 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\cars\\eef2f2d6-ab43-4d71-9cf3-3301368e9e0d.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\website\\image_login.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\images\\website\\image_register.jpg",
+      "SourceId": "SimpleLocationWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\",
+      "BasePath": "_content/SimpleLocationWeb",
+      "RelativePath": "images/website/image_register.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\website\\image_register.jpg"
     },
     {
       "Identity": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\images\\website\\logo.svg",

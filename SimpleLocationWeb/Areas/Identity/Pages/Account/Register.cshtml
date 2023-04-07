@@ -12,121 +12,103 @@
     
 }
 
-<h1>@ViewData["Title"]</h1>
 
 <div class="row">
-    <div class="col-md-4">
-        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            @{
-                if(User.IsInRole("Manager"))
-                {
-                    <h2>Create a new user.</h2>
-
-                }
-                else
-                {
-                    <h2>Create a new account.</h2>
-                }
-            }
-            <hr />
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-floating my-2">
-                <input asp-for="Input.FirstName" class="form-control" aria-required="true" />
-                <label asp-for="Input.FirstName"></label>
-                <span asp-validation-for="Input.FirstName" class="text-danger"></span>
-            </div>
-            <div class="form-floating my-2">
-                <input asp-for="Input.LastName" class="form-control" aria-required="true" />
-                <label asp-for="Input.LastName"></label>
-                <span asp-validation-for="Input.LastName" class="text-danger"></span>
-            </div>
-            <div class="form-floating my-2">
-                <input asp-for="Input.PhoneNumber" class="form-control" aria-required="true" />
-                <label asp-for="Input.PhoneNumber"></label>
-                <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
-            </div>
-            <div class="form-floating my-2">
-                <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
-                <label asp-for="Input.Email"></label>
-                <span asp-validation-for="Input.Email" class="text-danger"></span>
-            </div>
-            <div class="form-floating my-2">
-                <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" />
-                <label asp-for="Input.Password"></label>
-                <span asp-validation-for="Input.Password" class="text-danger"></span>
-            </div>
-            <div class="form-floating my-2">
-                <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" />
-                <label asp-for="Input.ConfirmPassword"></label>
-                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-            </div>
-            @{
-                if (User.IsInRole("Manager"))
-                {
-                    <div class="form-floating my-2">
-                        <input type="radio" name="rdUserRole" value="@SD.ManagerRole" />@SD.ManagerRole
-                        <input type="radio" name="rdUserRole" value="@SD.EmployeeRole" />@SD.EmployeeRole
-                        <input type="radio" name="rdUserRole" value="@SD.FrontDeskRole" />@SD.FrontDeskRole
-                    </div>
-                }
-                else
-                {
-                  
-                }
-            }
-            
-            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
-            @{
-                if (User.IsInRole("Manager") || User.IsInRole("Employee"))
-                {
-                    <a asp-page="../Admin/Users/Index" class="btn btn-secondary">Back to List</a>
-                }
-            }
-        </form>
-    </div>
-    <div class="col-md-6 col-md-offset-2">
-        <section>
-            
-            @{
-                if (User.IsInRole("Manager") || User.IsInRole("Employee"))
-                {
-
-
-                }
-                else
-                {
-                    <h3>Use another service to register.</h3>
-                    <hr />
-                    if ((Model.ExternalLogins?.Count ?? 0) == 0)
+    <div class="container_register_form_image">
+        <div class="col-md-4 container_registerForm">
+            <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                @{
+                    if (User.IsInRole("Manager"))
                     {
-                        <div>
-                            <p>
-                                There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">
-                                    article
-                                    about setting up this ASP.NET application to support logging in via external services
-                                </a>.
-                            </p>
+                        <h2>Créer un nouveau client</h2>
+
+                    }
+                    else
+                    {
+                        <h2>Créer un nouveau compte</h2>
+                    }
+                }
+                <hr />
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-floating my-2">
+                    <input asp-for="Input.FirstName" class="form-control" aria-required="true" />
+                    <label asp-for="Input.FirstName">Nom</label>
+                    <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-floating my-2">
+                    <input asp-for="Input.LastName" class="form-control" aria-required="true" />
+                    <label asp-for="Input.LastName">Prenom</label>
+                    <span asp-validation-for="Input.LastName" class="text-danger"></span>
+                </div>
+                <div class="form-floating my-2">
+                    <input asp-for="Input.PhoneNumber" class="form-control" aria-required="true" />
+                    <label asp-for="Input.PhoneNumber">Numéro de téléphone</label>
+                    <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+                </div>
+                <div class="form-floating my-2">
+                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
+                    <label asp-for="Input.Email"></label>
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form-floating my-2">
+                    <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" />
+                    <label asp-for="Input.Password">Mot de Passe</label>
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="form-floating my-2">
+                    <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" />
+                    <label asp-for="Input.ConfirmPassword">Confirmer Mot de Passe</label>
+                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                </div>
+                @{
+                    if (User.IsInRole("Manager"))
+                    {
+                        <div class="form-floating my-2">
+                            <input type="radio" name="rdUserRole" value="@SD.ManagerRole" />@SD.ManagerRole
+                            <input type="radio" name="rdUserRole" value="@SD.EmployeeRole" />@SD.EmployeeRole
+                            <input type="radio" name="rdUserRole" value="@SD.FrontDeskRole" />@SD.FrontDeskRole
                         </div>
                     }
                     else
                     {
-                        <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
-                            <div>
-                                <p>
-                                    @foreach (var provider in Model.ExternalLogins!)
-                                    {
-                                        <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
-                                    }
-                                </p>
-                            </div>
-                        </form>
+
                     }
                 }
+                @if(User.IsInRole("Manager"))
+                {
+                    <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Créer Client</button>
+                }
+                else
+                {
+                    <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">S'inscrire</button>
+                }
+                @{
+                    if (User.IsInRole("Manager") || User.IsInRole("Employee"))
+                    {
+                        <a asp-page="../Admin/Users/Index" class="btn btn-secondary">Retour</a>
+                    }
+                }
+            </form>
+        </div>
+        <div class="container_register_image">
+            <div class="register_image">
+                @{
+                    if (User.IsInRole("Manager") || User.IsInRole("Employee"))
+                    {
 
 
-               
-            }
-        </section>
+                    }
+                    else
+                    {
+                        <img src="/images/website/image_register.jpg" width="100%" style="border-radius:5px; border:1px solid #bbb9b9" class="image_register" />
+                    }
+
+
+
+                }
+            </div>
+
+        </div>
     </div>
 </div>
 

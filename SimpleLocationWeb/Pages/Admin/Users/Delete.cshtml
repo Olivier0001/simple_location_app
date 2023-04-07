@@ -7,11 +7,12 @@
         <div class="row pb-2">
             <div class="col-9">
                 <h2 class="text-primary pl-3">
-                    @(Model.User.Id != null ? "Delete" : "Create") User
+                    @*@(Model.User.Id != null ? "Delete" : "Create") User*@
+                    Supprimer Client
                 </h2>
                 <hr />
                 <div class="mb-3">
-                    <label asp-for="User.UserName"></label>
+                    <label asp-for="User.UserName">Nom Utilisateur</label>
                     <input type="text" asp-for="User.UserName" disabled class="form-control" />
                 </div>
                 <div class="mb-3">
@@ -19,22 +20,22 @@
                     <input asp-for="User.Email" disabled class="form-control"></input>
                 </div>
                 <div class="mb-3">
-                    <label asp-for="User.PhoneNumber"></label>
+                    <label asp-for="User.PhoneNumber">Téléphone</label>
                     <input asp-for="User.PhoneNumber" disabled class="form-control"></input>
                 </div>
                 <div class="mb-3">
-                    <label asp-for="User.FirstName"></label>
+                    <label asp-for="User.FirstName">Nom</label>
                     <input asp-for="User.FirstName" disabled class="form-control"></input>
                 </div>
                 <div class="mb-3">
-                    <label asp-for="User.LastName"></label>
+                    <label asp-for="User.LastName">Prénom</label>
                     <input asp-for="User.LastName" disabled class="form-control"></input>
                 </div>
                 
             </div>
         </div>
-        <button type="submit" class="btn btn-primary" style="width:150px">@(Model.User.Id != null ? "Delete" : "Create")</button>
-        <a asp-page="Index" class="btn btn-secondary" style="width:170px">Back to List</a>
+        <button type="submit" class="btn btn-danger" style="width:150px">@*@(Model.User.Id != null ? "Delete" : "Create")*@Supprimer</button>
+        <a asp-page="Index" class="btn btn-secondary" style="width:170px">Retour</a>
     </div>
 </form>
 

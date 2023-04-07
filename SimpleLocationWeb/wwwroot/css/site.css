@@ -31,11 +31,82 @@ footer{
     height: 100px;
     margin: 0 30px 0 20px;
 }
+ /*///// Main//////////////*/
 
-.container_carStatus {
-    background-color: white;
-    width: 130px;
+.container_carStatusD,.container_carStatusND {
+    width: 150px;
     text-align: center;
-    margin: 0 0 0 0;
+    margin: 20px 0 0 -5px;
+    color: white;
+    background-color: red;
+}
+
+.container_carStatusD {
+    background-color: green;
+}
+
+
+.car_card {
+    box-shadow: 12px 12px 2px 1px #c8c3c3;
+}
+
+.carCategory {
+    background-color: black;
+    height: 70px;
+    width: 300px;
+    margin: 0 0 30px 0;
+    padding: 0;
+    color: white;
+    box-shadow: 12px 12px 2px 1px #c8c3c3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.car_price {
+    background-color: white;
+    margin: 0 0 0 30px;
+}
+
+.card-body {
+    display: flex;
+}
+
+p{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.car_image{
+    width: 450px;
+    height: 280px;
+}
+
+.car_textarea{
+    margin: 20px 0 20px 0;
+}
+
+.container_register_image {
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+}
+
+.register_image {
+    width: 600px;
+}
+
+.container_register_form_image{
+   display: flex;
+    margin: 25px 0 0 0;
+    padding: 0;
+    justify-content: space-around;
+}
+
+.container_registerForm {
+    margin:0;
 }
 

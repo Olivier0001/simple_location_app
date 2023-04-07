@@ -6,7 +6,7 @@
  <div class="container p-3">
     <div class="row pt-4">
         <div class="col-6">
-            <h2 class="text-primary">User List</h2>
+            <h2 class="text-primary">Liste des Clients</h2>
         </div>
         @if(User.IsInRole("Employee"))
         {
@@ -16,7 +16,7 @@
         {
             <div class="col-6 text-end">
                 <a asp-area="Identity" asp-page="/Account/Register" class="btn btn-primary">
-                    <i class="bi bi-pencil-square"></i> &nbsp;Create New User
+                    <i class="bi bi-pencil-square"></i> &nbsp;Créer Nouveau Client
                 </a>
             </div>
         }
@@ -27,14 +27,14 @@
     <table id="DT_load" class="table table-bordered table-striped" style="width:100%">
         <thead>
             <tr>
-                <th>UserName</th>
+                <th>Nom Utilisateur</th>
                 <th>Email</th>
-                <th>Phone Number</th>
-                <th>FirstName</th>
-                <th>LastName</th>
+                <th>Téléphone</th>
+                <th>Nom</th>
+                <th>Prénom</th>
                 @if (User.IsInRole("Manager"))
                 {
-                    <th></th>
+                    <th>Actions</th>
                 }
                 else
                 {

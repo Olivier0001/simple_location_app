@@ -7,7 +7,7 @@
 @if (User.IsInRole("Manager") || User.IsInRole("Employee"))
 {
     <li class="nav-item">
-        <a class="nav-link" asp-area="" asp-page="/Admin/Order/OrderList">Order List</a>
+        <a class="nav-link" asp-area="" asp-page="/Admin/Order/OrderList">Liste des locations</a>
     </li>
 }
 @if (User.IsInRole("Customer"))

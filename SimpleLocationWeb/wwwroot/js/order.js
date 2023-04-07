@@ -10,10 +10,6 @@ $(document).ready(function () {
             { "data": "pickupName", "width": "15%" },
             { "data": "user.email", "width": "15%" },
             { "data": "orderTotal", "width": "15%" },
-            { "data": "pickUpDate", "width": "15%" },
-            { "data": "pickUpTime", "width": "15%" },
-            { "data": "pickDateOfReturn", "width": "15%" },
-            { "data": "pickTimeOfReturn", "width": "25%" },
             {
                 "data": "id",
                 "render": function (data) {

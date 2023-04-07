@@ -7,12 +7,12 @@
         <div class="row pb-2">
             <div class="col-9">
                 <h2 class="text-primary pl-3">
-                    @(Model.Car.Id!=0 ? "Update" : "Create") Car
+                    @(Model.Car.Id!=0 ? "Modifier" : "Créer") Voiture
                 </h2>
                 <hr />
                 <div asp-validation-summary="All"></div>
                 <div class="mb-3">
-                    <label asp-for="Car.Name"></label>
+                    <label asp-for="Car.Name">Modèle</label>
                     <input type="text" asp-for="Car.Name" class="form-control" />
                     <span asp-validation-for="Car.Name" class="text-danger"></span>
                 </div>
@@ -22,7 +22,7 @@
                     <span asp-validation-for="Car.Description" class="text-danger"></span>
                 </div>
                 <div class="mb-3">
-                    <label asp-for="Car.Price"></label>
+                    <label asp-for="Car.Price">Prix</label>
                     <input asp-for="Car.Price" step="0,01" type="number" class="form-control" />
                     <span asp-validation-for="Car.Price" class="text-danger"></span>
                 </div>
@@ -31,16 +31,16 @@
                     <input type="file" name="files" id="uploadBox" class="form-control" />
                 </div>
                 <div class="mb-3">
-                    <label asp-for="Car.CategoryId"></label>
+                    <label asp-for="Car.CategoryId">Catégorie</label>
                     <select asp-for="Car.CategoryId" asp-items="Model.CategoryList" class="form-select">
-                        <option disabled selected>-Selected Category-</option>
+                        <option disabled selected>-Sélectionner Catégorie-</option>
                     </select>
                     <span asp-validation-for="Car.CategoryId" class="text-danger"></span>
                 </div>
                 <div class="mb-3">
-                    <label asp-for="Car.CarBrandId"></label>
+                    <label asp-for="Car.CarBrandId">Marque</label>
                     <select asp-for="Car.CarBrandId" asp-items="Model.CarBrandList" class="form-select">
-                        <option disabled selected>-Selected Car Brand-</option>
+                        <option disabled selected>-Sélectionner Marque-</option>
                     </select>
                     <span asp-validation-for="Car.CarBrandId" class="text-danger"></span>
                 </div>
@@ -68,13 +68,13 @@
             </div>
             
         </div>
-        <button type="submit" class="btn btn-primary" style="width:150px">@(Model.Car.Id != 0 ? "Update" : "Create")</button>
-        <a asp-page="Index" class="btn btn-secondary" style="width:170px">Back to List</a>
+        <button type="submit" class="btn btn-primary" style="width:150px">@(Model.Car.Id != 0 ? "Modifier" : "Créer")</button>
+        <a asp-page="Index" class="btn btn-secondary" style="width:170px">Retour</a>
     </div>
 </form>
 
 @section Scripts{
-    <script>
+   @* <script>
         tinymce.init({
             selector: 'textarea',
             plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
@@ -86,7 +86,7 @@
                 { value: 'Email', title: 'Email' },
             ]
         });
-    </script>
+    </script>*@
     @{
     <partial name="_ValidationScriptsPartial" />
     }

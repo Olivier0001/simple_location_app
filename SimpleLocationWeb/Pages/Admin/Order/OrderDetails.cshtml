@@ -5,10 +5,10 @@
     <div class="border p-4 ml-1 backgroundWhite mt-4">
         <div class="row pb-1">
             <div class="col-12 col-md-6">
-                <p class="h2 text-primary">Order Details</p>
+                <p class="h2 text-primary">Details de la Location</p>
             </div>
             <div class="col-12 col-md-4 offset-md-2">
-                <a asp-page="/Admin/Order/OrderList" class="btn btn-outline-primary form-control">Back to Orders</a>
+                <a asp-page="/Admin/Order/OrderList" class="btn btn-outline-primary form-control">Retour à la liste</a>
             </div>
         </div>
         <hr />
@@ -16,7 +16,7 @@
             <div class="col-lg-8 col-12" style="border-right:1px solid #bbb9b9">
                 <div class="form-group row py-1">
                     <div class="col-md-3 col-12 text-primary">
-                        Name
+                        Nom
                     </div>
                     <div class="col-md-9 col-12">
                         <input asp-for="OrderDetailVM.OrderHeader.PickupName"  disabled class="form-control" />
@@ -32,7 +32,7 @@
                 </div>
                 <div class="form-group row py-1">
                     <div class="col-md-3 col-12 text-primary">
-                        Phone Number
+                        Téléphone
                     </div>
                     <div class="col-md-9 col-12">
                         <input asp-for="OrderDetailVM.OrderHeader.PhoneNumber" disabled class="form-control" />
@@ -40,7 +40,7 @@
                 </div>
                 <div class="form-group row py-1">
                     <div class="col-md-3 col-12 text-primary">
-                        Order Total
+                        Prix Total
                     </div>
                     <div class="col-md-9 col-12">
                         <input asp-for="OrderDetailVM.OrderHeader.OrderTotal" disabled class="form-control" />
@@ -48,7 +48,7 @@
                 </div>
                 <div class="form-group row py-1">
                     <div class="col-md-3 col-12 text-primary">
-                        Pick Up Date
+                        Date de Début
                     </div>
                     <div class="col-md-9 col-12">
                         <input asp-for="OrderDetailVM.OrderHeader.PickUpDate" disabled class="form-control" />
@@ -56,7 +56,7 @@
                 </div>
                 <div class="form-group row py-1">
                     <div class="col-md-3 col-12 text-primary">
-                        Pick Up Time
+                        Heure de Début
                     </div>
                     <div class="col-md-9 col-12">
                         <input asp-for="OrderDetailVM.OrderHeader.PickUpTime" type="time"  disabled class="form-control" />
@@ -64,7 +64,7 @@
                 </div>
                 <div class="form-group row py-1">
                     <div class="col-md-3 col-12 text-primary">
-                        Pick Time Of Return
+                        Heure de Fin
                     </div>
                     <div class="col-md-9 col-12">
                         <input asp-for="OrderDetailVM.OrderHeader.PickTimeOfReturn" type="time" disabled class="form-control" />
@@ -72,7 +72,7 @@
                 </div>
                 <div class="form-group row py-1">
                     <div class="col-md-3 col-12 text-primary">
-                        Pick Date Of Return
+                        Date de Fin
                     </div>
                     <div class="col-md-9 col-12">
                         <input asp-for="OrderDetailVM.OrderHeader.PickDateOfReturn" disabled class="form-control" />
@@ -80,15 +80,16 @@
                 </div>
                 <div class="form-group row py-1">
                     <div class="col-md-3 col-12 text-primary">
-                        Order Date
+                        Date de Création Location
                     </div>
                     <div class="col-md-9 col-12">
                         <input asp-for="OrderDetailVM.OrderHeader.OrderDate" disabled class="form-control" />
-                    </div>
+@*                        @Model.OrderDetailVM.OrderHeader.OrderDate.ToString("dd/MM/yyyy HH:mm")
+*@                    </div>
                 </div>
                 <div class="form-group row py-1">
                     <div class="col-md-3 col-12 text-primary">
-                        Comments
+                        Commentaires
                     </div>
                     <div class="col-md-9 col-12">
                         <textarea asp-for="OrderDetailVM.OrderHeader.Comments" disabled class="form-control" rows="3"></textarea>
@@ -98,7 +99,7 @@
             <div class="col-lg-4 col-12">
                 
                     <h4 class="d-flex justify-content-between align-content-center mb-3">
-                        <span class="text-muted">Order ID:</span>
+                        <span class="text-muted">Location:</span>
                         <span class="badge badge-secondary badge-pill">@Model.OrderDetailVM.OrderHeader.Id</span>
                     </h4>
                     <ul class="list-group mb-3">
@@ -107,20 +108,20 @@
                             <li class="list-group-item d-flex justify-content-between">
                                 <div>
                                     <h6 class="my-0">@detail.Name</h6>
-                                    <small class="text-muted">Quantity : @detail.Count</small>
+                                    <small class="text-muted">Nombre de Jour : @detail.Count</small>
                                 </div>
                             <span class="text-muted">@(Math.Round((detail.Price * detail.Count),2))</span>
                             </li>
                     }
                         <li class="list-group-item d-flex justify-content-between bg-light">
                             <div>
-                                <h6 class="text-info">Total (USD)</h6>
+                                <h6 class="text-info">Total (€)</h6>
                                 <small class="text-info">@Model.OrderDetailVM.OrderHeader.OrderTotal</small>
                             </div>
                         </li>
                     </ul>
 
-                    <button type="submit" class="btn btn-primary" style="width:150px">Delete</button>
+                    <button type="submit" class="btn btn-danger" style="width:150px">Supprimer</button>
                    
 
             </div>

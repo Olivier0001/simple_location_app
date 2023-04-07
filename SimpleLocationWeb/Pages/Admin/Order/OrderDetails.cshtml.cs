@@ -33,8 +33,11 @@ namespace SimpleLocationWeb.Pages.Admin.Order
             OrderDetailVM = new()
             {
                 OrderHeader = _unitOfWork.OrderHeader.GetFirstOrDefault(u => u.Id == id, includeProperties: "User"),
-                OrderDetails = _unitOfWork.OrderDetails.GetAll(u => u.OrderId == id).ToList(),
+                OrderDetails = _unitOfWork.OrderDetails.GetAll(u => u.OrderId == id).ToList(),                
             };
+
+            //DateTime test = OrderDetailVM.OrderHeader.OrderDate;
+            //string date = test.ToString("dd/MM/yyyy");
         }
 
 
