@@ -37,7 +37,7 @@ namespace SimpleLocationWeb.Pages.Admin.CarBrands
             {
                 _unitOfWork.CarBrand.Update(CarBrand);
                 _unitOfWork.Save();
-                TempData["success"] = "CarBrand update successfully";
+                TempData["success"] = "Modification de la marque réussie";
                 return RedirectToPage("/Admin/CarBrands/Index");
             }
             return Page();

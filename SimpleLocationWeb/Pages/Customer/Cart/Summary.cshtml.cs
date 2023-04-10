@@ -65,7 +65,19 @@ namespace SimpleLocationWeb.Pages.Customer.Cart
                     Car.CarStatus = cartItem.Car.CarStatus;
                     cartItem.Car.CarStatus = "Non Disponible";
                     var test = cartItem.Car;
-                    _unitOfWork.Car.Update(test);
+                    TimeSpan Diff = OrderHeader.PickDateOfReturn - OrderHeader.PickUpDate;
+                    var resultat = Diff.TotalDays;
+                    var nombreDeJour = cartItem.Count;
+                    if (nombreDeJour == resultat)
+                    {
+                        _unitOfWork.Car.Update(test);
+                    }
+                    else
+                    {
+                        TempData["error"] = "Les dates de Location ne correspondent pas au nombre de jour choisi";
+                        return RedirectToPage("/Customer/Cart/Summary");
+                    }
+                    
                 }
 
                
@@ -96,10 +108,9 @@ namespace SimpleLocationWeb.Pages.Customer.Cart
                     //string test = OrderDetails.Car.CarStatus;
                     _unitOfWork.OrderDetails.Add(orderDetails);
                 }
-
-
-
                 int quantity = LocationCarCartList.ToList().Count;
+                
+
                 _unitOfWork.LocationCarCart.RemoveRange(LocationCarCartList);
                 _unitOfWork.Save();
 
@@ -107,22 +118,22 @@ namespace SimpleLocationWeb.Pages.Customer.Cart
                 var options = new SessionCreateOptions
                 {
                     LineItems = new List<SessionLineItemOptions>
-                {
-                  new SessionLineItemOptions
-                  {
-                      PriceData = new SessionLineItemPriceDataOptions
+                    {
+                      new SessionLineItemOptions
                       {
-                          UnitAmount = (long)OrderHeader.OrderTotal*100,
-                          Currency="usd",
-                          ProductData= new SessionLineItemPriceDataProductDataOptions
+                          PriceData = new SessionLineItemPriceDataOptions
                           {
-                              Name = "Simple Location Order",
-                              Description = "Total Distinct Item - "+quantity
+                              UnitAmount = (long)OrderHeader.OrderTotal*100,
+                              Currency="usd",
+                              ProductData= new SessionLineItemPriceDataProductDataOptions
+                              {
+                                  Name = "Simple Location Order",
+                                  Description = "Total Distinct Item - "+quantity
+                              },
                           },
+                          Quantity = quantity
                       },
-                      Quantity = quantity
-                  },
-                },
+                    },
                     Mode = "payment",
                     SuccessUrl = domain + $"customer/cart/OrderConfirmation?id={OrderHeader.Id}",
                     CancelUrl = domain + "customer/cart/index",
@@ -132,6 +143,7 @@ namespace SimpleLocationWeb.Pages.Customer.Cart
 
                 Response.Headers.Add("Location", session.Url);
                 return new StatusCodeResult(303);
+
             }
 
             return Page();

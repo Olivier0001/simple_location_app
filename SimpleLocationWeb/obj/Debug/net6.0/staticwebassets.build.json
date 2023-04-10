@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Ss/PDAq1ROscSDMgVBa3OR2RzdXlLU8II/uvhEQrhbQ=",
+  "Hash": "yCIuQXX8echKnyY7SC4hjYcRFs5AjFqMqhjyOuJK/V4=",
   "Source": "SimpleLocationWeb",
   "BasePath": "_content/SimpleLocationWeb",
   "Mode": "Default",
@@ -1341,6 +1341,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\website\\logo.svg"
+    },
+    {
+      "Identity": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\images\\website\\panier_vide.jpg",
+      "SourceId": "SimpleLocationWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\",
+      "BasePath": "_content/SimpleLocationWeb",
+      "RelativePath": "images/website/panier_vide.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\website\\panier_vide.jpg"
     },
     {
       "Identity": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\wwwroot\\js\\car.js",

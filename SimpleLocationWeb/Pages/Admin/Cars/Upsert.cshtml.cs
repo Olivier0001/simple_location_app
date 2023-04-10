@@ -70,6 +70,7 @@ namespace SimpleLocationWeb.Pages.Admin.Cars
                 Car.CarStatus = "Disponible";
                 _unitOfWork.Car.Add(Car);
                 _unitOfWork.Save();
+                TempData["success"] = "Création de la voiture réussie";
             }
             else
             {
@@ -103,6 +104,7 @@ namespace SimpleLocationWeb.Pages.Admin.Cars
                 }
                 _unitOfWork.Car.Update(Car);
                 _unitOfWork.Save();
+                TempData["success"] = "Modification de la voiture réussie";
             }
             return RedirectToPage("./Index");
         }

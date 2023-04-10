@@ -2,14 +2,23 @@
 $(document).ready(function () {
    dataTable= $('#DT_load').DataTable({
         "ajax": {
-            "url": "/api/order",
+            "url": "/api/Order",
             "type": "GET",
             "datatype":"json"
         },
-        "columns": [
-            { "data": "pickupName", "width": "15%" },
-            { "data": "user.email", "width": "15%" },
-            { "data": "orderTotal", "width": "15%" },
+       "columns": [
+           { "data": "pickupName", "width": "15%" },
+           { "data": "orderTotal", "width": "15%" },
+           {
+               "data": "orderDate",
+               "render": function (data) {
+                   var date = new Date(data);
+                   var month = date.getMonth() + 1;
+                   return date.getDate() + "/" + (month.toString().length > 1 ? month : "0" + month) + "/" + date.getFullYear();
+               },
+
+               "width": "15%"
+           },
             {
                 "data": "id",
                 "render": function (data) {
@@ -20,40 +29,41 @@ $(document).ready(function () {
 
                 "width": "15%"
             }
-        ],
+       ],
+       
         "width":"100%"
     });
 });
 
-function Delete(url) {
+//function Delete(url) {
 
-    Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            $.ajax({
-                url: url,
-                type: 'DELETE',
-                success: function (data) {
-                    if (data.success) {
-                        dataTable.ajax.reload();
-                        //success notification
-                        toastr.success(data.message);
+//    Swal.fire({
+//        title: 'Are you sure?',
+//        text: "You won't be able to revert this!",
+//        icon: 'warning',
+//        showCancelButton: true,
+//        confirmButtonColor: '#3085d6',
+//        cancelButtonColor: '#d33',
+//        confirmButtonText: 'Yes, delete it!'
+//    }).then((result) => {
+//        if (result.isConfirmed) {
+//            $.ajax({
+//                url: url,
+//                type: 'DELETE',
+//                success: function (data) {
+//                    if (data.success) {
+//                        dataTable.ajax.reload();
+//                        //success notification
+//                        toastr.success(data.message);
                         
-                    }
-                    else {
-                        //failsure notification
-                        toastr.error(data.message);
-                    }
-                }
+//                    }
+//                    else {
+//                        //failsure notification
+//                        toastr.error(data.message);
+//                    }
+//                }
 
-            })
-        }
-    })
-}
+//            })
+//        }
+//    })
+//}

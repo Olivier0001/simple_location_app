@@ -48,7 +48,7 @@ namespace SimpleLocationWeb.Pages.Admin.Users
                 var objFromDb = _unitOfWork.User.GetFirstOrDefault(i => i.Id == User.Id);
                 _unitOfWork.User.Remove(objFromDb);
                 _unitOfWork.Save();
-                TempData["success"] = "User delete successfully";
+                TempData["success"] = "Modification du client réussie";
             }
 
             return RedirectToPage("./Index");

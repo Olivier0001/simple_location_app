@@ -5,14 +5,15 @@
     ViewData["Title"] = "Log in";
 }
 
-<div class="row">
+<div class="container_register">
     <div class="container_register_form_image">
         <div class="col-md-4">
             <section>
                 <form id="account" method="post">
                     <h2>Connectez-vous</h2>
                     <hr />
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div asp-validation-summary="All"></div>
+                    @*<div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
                     <div class="form-floating">
                         <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
                         <label asp-for="Input.Email" class="form-label"></label>
@@ -36,9 +37,9 @@
                         <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Se Connecter</button>
                     </div>
                     <div>
-                        <p>
+                        @*<p>
                             <a id="forgot-password" asp-page="./ForgotPassword">Vous avez oublié votre mot de passe ?</a>
-                        </p>
+                        </p>*@
                         <p>
                             <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">S'inscrire en tant que nouveau client</a>
                         </p>

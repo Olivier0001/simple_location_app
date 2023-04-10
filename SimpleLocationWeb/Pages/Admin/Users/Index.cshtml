@@ -32,7 +32,7 @@
                 <th>Téléphone</th>
                 <th>Nom</th>
                 <th>Prénom</th>
-                @if (User.IsInRole("Manager"))
+                @if (User.IsInRole("Manager") || User.IsInRole("Employee"))
                 {
                     <th>Actions</th>
                 }

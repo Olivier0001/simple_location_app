@@ -37,7 +37,7 @@ namespace SimpleLocationWeb.Pages.Admin.CarBrands
             {
                 _unitOfWork.CarBrand.Remove(carBrandFromDb);
                 _unitOfWork.Save();
-                TempData["success"] = "CarBrand delete successfully";
+                TempData["success"] = "Suppression de la marque réussie";
                 return RedirectToPage("/Admin/CarBrands/Index");
             }
             return Page();

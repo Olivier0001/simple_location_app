@@ -75,7 +75,7 @@ namespace SimpleLocationWeb.Pages.Customer.OrderCustomer
 
 
                 _unitOfWork.Save();
-                TempData["success"] = "Order delete successfully";
+                TempData["success"] = "Suppression de la location réussie";
 
                 return RedirectToPage("OrderCustomerList");
             }

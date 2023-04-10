@@ -43,7 +43,7 @@ namespace SimpleLocationWeb.Pages.Admin.Users
             var objFromDb = _unitOfWork.User.GetFirstOrDefault(i => i.Id == User.Id);
             _unitOfWork.User.Update(User);
             _unitOfWork.Save();
-            TempData["success"] = "User edit successfully";
+            TempData["success"] = "Modification du client réussie";
             return RedirectToPage("./Index");
         }
     }

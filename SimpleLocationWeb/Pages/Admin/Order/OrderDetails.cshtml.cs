@@ -33,11 +33,9 @@ namespace SimpleLocationWeb.Pages.Admin.Order
             OrderDetailVM = new()
             {
                 OrderHeader = _unitOfWork.OrderHeader.GetFirstOrDefault(u => u.Id == id, includeProperties: "User"),
-                OrderDetails = _unitOfWork.OrderDetails.GetAll(u => u.OrderId == id).ToList(),                
+                OrderDetails = _unitOfWork.OrderDetails.GetAll(u => u.OrderId == id).ToList(),
             };
 
-            //DateTime test = OrderDetailVM.OrderHeader.OrderDate;
-            //string date = test.ToString("dd/MM/yyyy");
         }
 
 
@@ -55,29 +53,29 @@ namespace SimpleLocationWeb.Pages.Admin.Order
             // Recuperer l'enregistrement de la voiture
             var objOrderDetails = _unitOfWork.OrderDetails.GetFirstOrDefault(u => u.OrderId == id);
             int carId = objOrderDetails.CarId;
-            Car = _unitOfWork.Car.GetFirstOrDefault(u => u.Id == carId);
-            var car = Car;
+            if (carId != null)
+            {
+                Car = _unitOfWork.Car.GetFirstOrDefault(u => u.Id == carId);
+                var car = Car;
 
-            // Recuperer le statut de la voiture et le modifier
-            string carStatus = Car.CarStatus;
-            string newCarStatus = "Disponible";
-            Car.CarStatus = newCarStatus;
+                // Recuperer le statut de la voiture et le modifier
+                string carStatus = Car.CarStatus;
+                string newCarStatus = "Disponible";
+                Car.CarStatus = newCarStatus;
 
-            // Mettre a jour la modification et enregistrez la
-            _unitOfWork.Car.Update(car);
-            _unitOfWork.Save();
+                // Mettre a jour la modification et enregistrez la
+                _unitOfWork.Car.Update(car);
+                _unitOfWork.Save();
 
+                
+            }
 
             //Delete
             var objFromDb = _unitOfWork.OrderHeader.GetFirstOrDefault(u => u.Id == id, includeProperties: "User");
             _unitOfWork.OrderHeader.Remove(objFromDb);
 
-
-
-           
-
             _unitOfWork.Save();
-            TempData["success"] = "Order delete successfully";
+            TempData["success"] = "Suppression de la location réussie";
 
             return RedirectToPage("OrderList");
         }

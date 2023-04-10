@@ -45,62 +45,6 @@ namespace SimpleLocationWeb.Pages.Customer.Home
             });
         }
 
-        public async Task<IActionResult> OnPost()
-        {
 
-            string webRootPath = _hostEnvironment.WebRootPath;
-            var files = HttpContext.Request.Form.Files;
-
-            if (Car.Id == 0)
-            {
-                //create
-                string fileName_new = Guid.NewGuid().ToString();
-                var uploads = Path.Combine(webRootPath, @"images\cars");
-                var extension = Path.GetExtension(files[0].FileName);
-
-                using (var fileStream = new FileStream(Path.Combine(uploads, fileName_new + extension), FileMode.Create))
-                {
-                    files[0].CopyTo(fileStream);
-                }
-                Car.Image = @"\images\cars\" + fileName_new + extension;
-                Car.CarStatus = "Disponible";
-                _unitOfWork.Car.Add(Car);
-                _unitOfWork.Save();
-            }
-            else
-            {
-                //Edit
-                var objFromDb = _unitOfWork.Car.GetFirstOrDefault(i => i.Id == Car.Id);
-
-                if (files.Count > 0)
-                {
-                    string fileName_new = Guid.NewGuid().ToString();
-                    var uploads = Path.Combine(webRootPath, @"images\cars");
-                    var extension = Path.GetExtension(files[0].FileName);
-
-                    //Delete the old image
-                    var oldImagePath = Path.Combine(webRootPath, objFromDb.Image.TrimStart('\\'));
-
-                    if (System.IO.File.Exists(oldImagePath))
-                    {
-                        System.IO.File.Delete(oldImagePath);
-                    }
-                    //new upload
-                    using (var fileStream = new FileStream(Path.Combine(uploads, fileName_new + extension), FileMode.Create))
-                    {
-                        files[0].CopyTo(fileStream);
-                    }
-                    Car.Image = @"\images\cars\" + fileName_new + extension;
-                }
-                else
-                {
-                    Car.Image = objFromDb.Image;
-
-                }
-                _unitOfWork.Car.Update(Car);
-                _unitOfWork.Save();
-            }
-            return RedirectToPage("./Index");
-        }
     }
 }

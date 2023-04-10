@@ -13,7 +13,7 @@
                             <h1 class="text-primary">@Model.LocationCarCart.Car.Name</h1>
                         </div>
                         <div class="col-12 col-md-6 text-end pt-2">
-                            <h1 class="text-muted">$@Model.LocationCarCart.Car.Price</h1>
+                            <h1 class="text-muted">@Model.LocationCarCart.Car.Price €</h1>
                         </div>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                                         <p class="text-secondary">@Html.Raw(Model.LocationCarCart.Car.Description)</p>
                                         <div class="form-floating my-2">
                                             <input asp-for="@Model.LocationCarCart.Count" class="form-control" aria-required="true" />
-                                            <label asp-for="@Model.LocationCarCart.Count"></label>
+                                            <label asp-for="@Model.LocationCarCart.Count">Nombre de Jour</label>
                                             <span asp-validation-for="@Model.LocationCarCart.Count" class="text-danger"></span>
                                         </div>
                                     </div>
@@ -44,10 +44,10 @@
                 <div class="card-footer">
                     <div class="row">
                         <div class="col-12 col-md-6 pb-1">
-                            <a asp-page="/Customer/Home/Index" class="btn btn-success btn-square form-control" style="height:50px;">Back to List</a>
+                            <a asp-page="/Customer/Home/Index" class="btn btn-success btn-square form-control" style="height:50px;">Retour</a>
                         </div>
                         <div class="col-12 col-md-6">
-                            <button type="submit" class="btn btn-primary btn-square form-control" style="height:50px;">Add to Cart</button>
+                            <button type="submit" class="btn btn-primary btn-square form-control" style="height:50px;">Ajouter</button>
                         </div>
                     </div>
                 </div>

@@ -36,7 +36,7 @@ namespace SimpleLocationWeb.Pages.Admin.Categories
             {
                 _unitOfWork.Category.Remove(categoryFromDb);
                 _unitOfWork.Save();
-                TempData["success"] = "Category delete successfully";
+                TempData["success"] = "Suppression de la catégorie réussie";
                 return RedirectToPage("/Admin/Categories/Index");
             }
             return Page();

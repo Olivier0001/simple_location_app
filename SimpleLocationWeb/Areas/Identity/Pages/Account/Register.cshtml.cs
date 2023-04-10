@@ -79,7 +79,7 @@ namespace SimpleLocationWeb.Areas.Identity.Pages.Account
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Required]
+            [Required(ErrorMessage = "Le champ Email est obligatoire")]
             [EmailAddress]
             [Display(Name = "Email")]
             public string Email { get; set; }
@@ -88,7 +88,7 @@ namespace SimpleLocationWeb.Areas.Identity.Pages.Account
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Required]
+            [Required(ErrorMessage = "Le champ Mot de Passe est obligatoire")]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
             [DataType(DataType.Password)]
             [Display(Name = "Password")]
@@ -98,15 +98,17 @@ namespace SimpleLocationWeb.Areas.Identity.Pages.Account
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
+            /// 
+            [Required(ErrorMessage = "Le champ Confirmer Mot de Passe est obligatoire")]
             [DataType(DataType.Password)]
             [Display(Name = "Confirm password")]
-            [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+            [Compare("Password")]
             public string ConfirmPassword { get; set; }
-            [Required]
+            [Required(ErrorMessage = "Le champ Nom est obligatoire")]
             public string FirstName { get; set; }
-            [Required]
+            [Required(ErrorMessage = "Le champ Prénom est obligatoire")]
             public string LastName { get; set; }
-            [Required]
+            [Required(ErrorMessage = "Le champ Téléphone est obligatoire")]
             public string PhoneNumber { get; set; }
         }
 

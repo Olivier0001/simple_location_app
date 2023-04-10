@@ -7,7 +7,7 @@
         <div class="row pb-2">
             <div class="col-9">
                 <h2 class="text-primary pl-3">
-                    Details Car
+                    Détails Voiture
                 </h2>
                 <hr />
                 <div asp-validation-summary="All"></div>
@@ -20,7 +20,7 @@
                     <p>@Model.Car.Description</p>
                 </div>
                 <div class="mb-3">
-                    <h5><label asp-for="Car.Price"></label>:</h5>
+                    <h5><label asp-for="Car.Price">Prix</label>:</h5>
                     <p>@Model.Car.Price €</p>
                 </div>
             </div>
@@ -32,7 +32,7 @@
             </div>
 
         </div>
-        <a asp-page="Index" class="btn btn-primary" style="width:170px">Back to List</a>
+        <a asp-page="Index" class="btn btn-primary" style="width:170px">Retour</a>
     </div>
 </form>
 

@@ -33,7 +33,7 @@ namespace SimpleLocationWeb.Pages.Admin.CarBrands
             {
                 _unitOfWork.CarBrand.Add(CarBrand);
                 _unitOfWork.Save();
-                TempData["success"] = "CarBrand created successfully";
+                TempData["success"] = "Création de la marque réussie";
                 return RedirectToPage("/Admin/CarBrands/Index");
             }
             return Page();

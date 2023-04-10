@@ -17,7 +17,7 @@ namespace SimpleLocation.Models
         [ValidateNever]
         public Car Car { get; set; }
 
-        [Range(1, 100, ErrorMessage = "Please select a count between 1 and 100")]
+        [Range(1, 100, ErrorMessage = "Veuillez sélectionner un nombre entre 1 et 100")]
         public int Count { get; set; }
         public string UserId { get; set; }
         [ForeignKey("UserId")]

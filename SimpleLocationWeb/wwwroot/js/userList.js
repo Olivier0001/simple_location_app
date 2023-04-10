@@ -12,6 +12,16 @@ $(document).ready(function () {
             { "data": "phoneNumber", "width": "15%" },
             { "data": "firstName", "width": "15%" },
             { "data": "lastName", "width": "15%" },
+            {
+                "data": "id",
+                "render": function (data) {
+                    return `<div class="w-75 btn-group">
+                             <a href="/Admin/Users/edit?id=${data}" class="btn btn-success text-white mx-2"> <i class="bi bi-pencil-square"></i></a>
+                             </div>`
+                },
+
+                "width": "15%"
+            }
             
         ],
         "width":"100%"

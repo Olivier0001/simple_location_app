@@ -19,7 +19,8 @@
                         Nom
                     </div>
                     <div class="col-md-9 col-12">
-                        <input asp-for="OrderDetailVM.OrderHeader.PickupName"  disabled class="form-control" />
+                        @*<input asp-for="OrderDetailVM.OrderHeader.PickupName"  disabled class="form-control" />*@
+                        @Model.OrderDetailVM.OrderHeader.PickupName
                     </div>
                 </div>
                 <div class="form-group row py-1">
@@ -27,7 +28,8 @@
                         Email
                     </div>
                     <div class="col-md-9 col-12">
-                        <input asp-for="OrderDetailVM.OrderHeader.User.Email" disabled class="form-control" />
+                        @*<input asp-for="OrderDetailVM.OrderHeader.User.Email" disabled class="form-control" />*@
+                        @Model.OrderDetailVM.OrderHeader.User.Email
                     </div>
                 </div>
                 <div class="form-group row py-1">
@@ -35,7 +37,8 @@
                         Téléphone
                     </div>
                     <div class="col-md-9 col-12">
-                        <input asp-for="OrderDetailVM.OrderHeader.PhoneNumber" disabled class="form-control" />
+                        @*<input asp-for="OrderDetailVM.OrderHeader.PhoneNumber" disabled class="form-control" />*@
+                        @Model.OrderDetailVM.OrderHeader.PhoneNumber
                     </div>
                 </div>
                 <div class="form-group row py-1">
@@ -43,7 +46,8 @@
                         Prix Total
                     </div>
                     <div class="col-md-9 col-12">
-                        <input asp-for="OrderDetailVM.OrderHeader.OrderTotal" disabled class="form-control" />
+                        @*<input asp-for="OrderDetailVM.OrderHeader.OrderTotal" disabled class="form-control" />*@
+                        @Model.OrderDetailVM.OrderHeader.OrderTotal €
                     </div>
                 </div>
                 <div class="form-group row py-1">
@@ -51,7 +55,8 @@
                         Date de Début
                     </div>
                     <div class="col-md-9 col-12">
-                        <input asp-for="OrderDetailVM.OrderHeader.PickUpDate" disabled class="form-control" />
+                        @*<input asp-for="OrderDetailVM.OrderHeader.PickUpDate" disabled class="form-control" />*@
+                        @Model.OrderDetailVM.OrderHeader.PickUpDate.ToString("dd/MM/yyyy")
                     </div>
                 </div>
                 <div class="form-group row py-1">
@@ -59,15 +64,8 @@
                         Heure de Début
                     </div>
                     <div class="col-md-9 col-12">
-                        <input asp-for="OrderDetailVM.OrderHeader.PickUpTime" type="time"  disabled class="form-control" />
-                    </div>
-                </div>
-                <div class="form-group row py-1">
-                    <div class="col-md-3 col-12 text-primary">
-                        Heure de Fin
-                    </div>
-                    <div class="col-md-9 col-12">
-                        <input asp-for="OrderDetailVM.OrderHeader.PickTimeOfReturn" type="time" disabled class="form-control" />
+                        @*<input asp-for="OrderDetailVM.OrderHeader.PickUpTime" type="time"  disabled class="form-control" />*@
+                        @Model.OrderDetailVM.OrderHeader.PickUpTime.ToString("HH:mm")
                     </div>
                 </div>
                 <div class="form-group row py-1">
@@ -75,7 +73,17 @@
                         Date de Fin
                     </div>
                     <div class="col-md-9 col-12">
-                        <input asp-for="OrderDetailVM.OrderHeader.PickDateOfReturn" disabled class="form-control" />
+                        @*<input asp-for="OrderDetailVM.OrderHeader.PickDateOfReturn" disabled class="form-control"  />*@
+                        @Model.OrderDetailVM.OrderHeader.PickDateOfReturn.ToString("dd/MM/yyyy")
+                    </div>
+                </div>
+                <div class="form-group row py-1">
+                    <div class="col-md-3 col-12 text-primary">
+                        Heure de Fin
+                    </div>
+                    <div class="col-md-9 col-12">
+                        @*<input asp-for="OrderDetailVM.OrderHeader.PickTimeOfReturn" type="time" disabled class="form-control" />*@
+                        @Model.OrderDetailVM.OrderHeader.PickTimeOfReturn.ToString("HH:mm")
                     </div>
                 </div>
                 <div class="form-group row py-1">
@@ -83,16 +91,17 @@
                         Date de Création Location
                     </div>
                     <div class="col-md-9 col-12">
-                        <input asp-for="OrderDetailVM.OrderHeader.OrderDate" disabled class="form-control" />
-@*                        @Model.OrderDetailVM.OrderHeader.OrderDate.ToString("dd/MM/yyyy HH:mm")
-*@                    </div>
+                        @*<input asp-for="OrderDetailVM.OrderHeader.OrderDate" disabled class="form-control" />*@
+                        @Model.OrderDetailVM.OrderHeader.OrderDate.ToString("dd/MM/yyyy HH:mm")
+                    </div>
                 </div>
                 <div class="form-group row py-1">
                     <div class="col-md-3 col-12 text-primary">
                         Commentaires
                     </div>
                     <div class="col-md-9 col-12">
-                        <textarea asp-for="OrderDetailVM.OrderHeader.Comments" disabled class="form-control" rows="3"></textarea>
+                        @*<textarea asp-for="OrderDetailVM.OrderHeader.Comments" disabled class="form-control" rows="3"></textarea>*@
+                        @Model.OrderDetailVM.OrderHeader.Comments
                     </div>
                 </div>
             </div>

@@ -36,13 +36,13 @@ namespace SimpleLocationWeb.Pages.Admin.Categories
         {
             if (Category.Name == Category.DisplayOrder.ToString())
             {
-                ModelState.AddModelError("Category.Name", "The displayOrder cannot exactly match the name");
+                ModelState.AddModelError("Category.Name", "L'ordre ne peut pas correspondre exactement au nom");
             }
             if (ModelState.IsValid)
             {
                 _unitOfWork.Category.Update(Category);
                 _unitOfWork.Save();
-                TempData["success"] = "Category update successfully";
+                TempData["success"] = "Modification de la catégorie réussie";
                 return RedirectToPage("/Admin/Categories/Index");
             }
             return Page();

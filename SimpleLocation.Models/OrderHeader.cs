@@ -52,12 +52,12 @@ namespace SimpleLocation.Models
 
         public string? TransactionId { get; set; }
 
-        [Display(Name = "Pickup Name")]
+        [Display(Name = "PickupName")]
         [Required]
         public string PickupName { get; set; }
 
 
-        [Display(Name = "Phone Number")]
+        [Display(Name = "PhoneNumber")]
         [Required]
         public string PhoneNumber { get; set; }
 

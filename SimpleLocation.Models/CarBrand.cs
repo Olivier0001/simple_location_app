@@ -6,7 +6,7 @@ namespace SimpleLocation.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Le champ Marque est obligatoire")]
         public string Name { get; set; }
 
     }

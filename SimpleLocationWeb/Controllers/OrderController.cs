@@ -21,7 +21,9 @@ namespace SimpleLocationWeb.Controllers
         public IActionResult Index()
         {
             var OrderHeaderList = _unitOfWork.OrderHeader.GetAll(includeProperties: "User");
+            var OrderDetailsList = _unitOfWork.OrderDetails.GetAll(includeProperties: "Car");
             return Json(new { data = OrderHeaderList });
+            
         }
 
 

@@ -1,6 +1,3 @@
-html {
-    font-size: 14px;
-}
 
 @media (min-width: 768px) {
   html {
@@ -11,16 +8,21 @@ html {
 html {
     position: relative;
     min-height: 100%;
-   
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
 }
 
 body {
-    margin: 0 0 0 0;
-    padding: 0 0 0 0;
+
+    padding: 0;
+    margin: 0;
 }
 
-footer{
+footer {
     height: 40px;
+    padding: 0;
+    margin: 0;
 }
 .iconHeader{
     font-size: 30px;
@@ -99,9 +101,13 @@ p{
     width: 600px;
 }
 
-.container_register_form_image{
-   display: flex;
-    margin: 25px 0 0 0;
+.container_register {
+    margin: 50px 0 0 0;
+}
+
+.container_register_form_image {
+    display: flex;
+    margin: 0 0 0 0;
     padding: 0;
     justify-content: space-around;
 }
@@ -109,4 +115,46 @@ p{
 .container_registerForm {
     margin:0;
 }
+
+.container_car_cart{
+    display:flex;
+    flex-direction: column
+}
+.container_image_carbrand_carname {
+    width: 300px;
+    display: flex;
+}
+.container_carbrand_carname {
+    width: 200px;
+    margin: 0 0 0 100px;
+}
+.container_price_button {
+    margin: 0 0 0 50px;
+}
+.container_price {
+    width: 90px;
+}
+.container_total_price, .container_total_price_label {
+    width: 250px;
+}
+.container_total_price {
+    padding: 0 0 0 0;
+}
+.cart{
+    font-size: 20px;
+    margin: 0 0 0 10px;
+}
+.container_image_text_panier{
+    margin:0;
+    padding:0;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+}
+.text_panier {
+    width: 700px;
+    margin: 0 0 50px 0;
+    padding: 0;
+}
+
 

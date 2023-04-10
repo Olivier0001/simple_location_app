@@ -6,10 +6,12 @@ namespace SimpleLocation.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Le champ Catégorie est obligatoire")]
         public string Name { get; set; }
+        [Required(ErrorMessage = "Le champ Ordre est obligatoire.")]
         [Display(Name = "Display Order")]
-        [Range(1, 100, ErrorMessage = "Display order must be in range of 1-100 !!!")]
+        [Range(1, 100, ErrorMessage = " L'ordre d'affichage doit être compris entre 1 et 100 !!!")]
         public int DisplayOrder { get; set; }
+        
     }
 }
