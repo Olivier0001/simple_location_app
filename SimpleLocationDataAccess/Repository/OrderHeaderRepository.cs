@@ -23,5 +23,6 @@ namespace SimpleLocation.DataAccess.Repository
         {
             _db.OrderHeader.Update(obj);
         }
+
     }
 }

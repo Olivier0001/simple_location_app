@@ -18,6 +18,9 @@ namespace SimpleLocationWeb.Pages.Admin.Users
 
         [BindProperty]
         public User User { get; set; }
+        public OrderHeader OrderHeader { get; set; }
+        public OrderDetails OrderDetails { get; set; }
+        public Car Car { get; set; }
 
 
         public DeleteModel(IUnitOfWork unitOfWork)
@@ -44,11 +47,38 @@ namespace SimpleLocationWeb.Pages.Admin.Users
 
             if (User.Id != null)
             {
+
                 //Delete
+
+                // Recuperer l'ensemble des enregistrements des commandes de l'utilisateur
+                var objOrderHeaderFromDb = _unitOfWork.OrderHeader.GetAll(i => i.UserId == User.Id);
+
+                // Recuperer l'ensemble des enregistrements des details des commandes de l'utilisateur
+                var objOrderDetailsFromDb = _unitOfWork.OrderDetails.GetAll(i => i.OrderHeader.UserId == User.Id);
+
+                // Pour chaque enregistrement modifier et sauvegarder le statut de la voiture
+                foreach (var item in objOrderDetailsFromDb)
+                {
+                    // Recuperer l'enregistrement de la voiture du details de la commande
+                    int carId = item.CarId;
+                    var objCarFromDb = _unitOfWork.Car.GetFirstOrDefault(i => i.Id == carId);
+                    // Extraire le statut de la voiture
+                    var carStatus = objCarFromDb.CarStatus;
+                    // Modifier le statut de la voiture et sauvegarder la modification
+                    carStatus = "Disponible";
+                    objCarFromDb.CarStatus = carStatus;
+                    _unitOfWork.Car.Update(objCarFromDb);
+                    _unitOfWork.Save();
+                }
+                // Supprimer l'ensemble des enregistrements des commandes et sauvegarder
+                _unitOfWork.OrderHeader.RemoveRange(objOrderHeaderFromDb);
+                _unitOfWork.Save();
+                // Recuperer l'enregistrement de l'utilisateur
                 var objFromDb = _unitOfWork.User.GetFirstOrDefault(i => i.Id == User.Id);
+                // Supprimer l'enregistrement de l'utilisateur et sauvegarder
                 _unitOfWork.User.Remove(objFromDb);
                 _unitOfWork.Save();
-                TempData["success"] = "Modification du client réussie";
+                TempData["success"] = "Suppression du client réussie";
             }
 
             return RedirectToPage("./Index");

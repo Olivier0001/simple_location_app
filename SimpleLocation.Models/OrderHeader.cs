@@ -28,21 +28,19 @@ namespace SimpleLocation.Models
         [Display(Name = "Order Total")]
         public double OrderTotal { get; set; }
 
-        [Required]
-        //[DisplayFormat(DataFormatString = "{0:t}")]
+        [Required(ErrorMessage = "Le champ Heure de début est obligatoire")]
         [Display(Name = "Pick Up Time")]
-        //[DataType(DataType.Time)]
         public DateTime PickUpTime { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Le champ Date de début est obligatoire")]
         [DataType(DataType.Date)]
         public DateTime PickUpDate { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Le champ Heure de retour est obligatoire")]
         [Display(Name = "Pick Time Of Return")]
         public DateTime PickTimeOfReturn { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Le champ Date de retour est obligatoire")]
         [DataType(DataType.Date)]
         public DateTime PickDateOfReturn { get; set; }
 
@@ -53,12 +51,12 @@ namespace SimpleLocation.Models
         public string? TransactionId { get; set; }
 
         [Display(Name = "PickupName")]
-        [Required]
+        [Required(ErrorMessage = "Le champ Nom est obligatoire")]
         public string PickupName { get; set; }
 
 
         [Display(Name = "PhoneNumber")]
-        [Required]
+        [Required(ErrorMessage = "Le champ Téléphone est obligatoire")]
         public string PhoneNumber { get; set; }
 
         public string OrderHeaderStatus { get; set; }

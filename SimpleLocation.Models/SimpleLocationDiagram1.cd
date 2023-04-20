@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SimpleLocation.Models.Car">
+    <Position X="5.25" Y="3" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAACBAAAAQEgAgAAAAAAAAQAAAAQABAAAAAAAAAACAA=</HashCode>
+      <FileName>Car.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleLocation.Models.CarBrand">
+    <Position X="5.25" Y="0.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CarBrand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleLocation.Models.Category">
+    <Position X="0.5" Y="3.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAACQAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Category.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleLocation.Models.LocationCarCart">
+    <Position X="9.5" Y="2.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAAQAAAAAAAAAAAyAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LocationCarCart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleLocation.Models.OrderDetails">
+    <Position X="5.25" Y="6.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>GAACAAAAAQQAAAAAAAAAAASAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OrderDetails.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleLocation.Models.OrderHeader">
+    <Position X="9.25" Y="5.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>CAADgAIEAAAAAAoAACAAQAgAAAAAAAAABAAAAQACIAA=</HashCode>
+      <FileName>OrderHeader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleLocation.Models.User">
+    <Position X="13.5" Y="4" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

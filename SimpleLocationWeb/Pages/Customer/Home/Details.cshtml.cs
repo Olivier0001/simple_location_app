@@ -22,6 +22,8 @@ namespace SimpleLocationWeb.Pages.Customer.Home
         [BindProperty]
         public LocationCarCart LocationCarCart { get; set; }
 
+        public IEnumerable<LocationCarCart> LocationCarCartList { get; set; }
+
 
         public void OnGet(int id)
         {
