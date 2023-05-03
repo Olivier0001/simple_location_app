@@ -33,13 +33,12 @@ namespace SimpleLocation.Models
         [Required(ErrorMessage = "Le champ Catégorie est obligatoire")]
         [Display(Name = "Category")]
         public int CategoryId { get; set; }
+        [ForeignKey("CategoryId")]
         public Category Category { get; set; }
         public string CarStatus { get; set; }
 
         
     }
 
-    //public class Class1
-    //{
-    //}
+ 
 }

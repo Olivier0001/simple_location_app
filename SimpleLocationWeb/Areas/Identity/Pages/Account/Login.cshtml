@@ -7,13 +7,12 @@
 
 <div class="container_register">
     <div class="container_register_form_image">
-        <div class="col-md-4">
-            <section>
+        <div class="col-md-4 container_register_form">
+            <section class="form_login">
                 <form id="account" method="post">
                     <h2>Connectez-vous</h2>
                     <hr />
                     <div asp-validation-summary="All"></div>
-                    @*<div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
                     <div class="form-floating">
                         <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
                         <label asp-for="Input.Email" class="form-label"></label>
@@ -28,8 +27,7 @@
                         <div class="checkbox">
                             <label asp-for="Input.RememberMe" class="form-label">
                                 <input class="form-check-input" asp-for="Input.RememberMe" />
-@*                                @Html.DisplayNameFor(m => m.Input.RememberMe)
-*@                                Se souvenir de moi ?
+                                Se souvenir de moi ?
                             </label>
                         </div>
                     </div>
@@ -57,7 +55,7 @@
                     }
                     else
                     {
-                        <img src="/images/website/image_login.jpg" width="100%" style="border-radius:5px; border:1px solid #bbb9b9" class="image_register" />
+                        <img src="/images/website/image_login.jpg" width="100%" class="image_register" />
                     }
                 }
             </div>

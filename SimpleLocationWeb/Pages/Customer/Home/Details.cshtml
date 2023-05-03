@@ -1,18 +1,18 @@
 ﻿@page
 @model SimpleLocationWeb.Pages.Customer.Home.DetailsModel
 
-<div class="">
+<div class="container">
     <form method="post">
         <input asp-for="LocationCarCart.CarId" hidden />
         <input asp-for="LocationCarCart.UserId" hidden />
         <div class="container backgroundWhite">
             <div class="card">
                 <div class="card-header">
-                    <div class="text-light ml-0 row">
-                        <div class="col-12 col-md-6 pt-2">
+                    <div class="text-light ml-0 row container_carbrand_carprice">
+                        <div class="col-12 col-md-6 pt-2 container_carbrand">
                             <h1 class="text-primary">@Model.LocationCarCart.Car.Name</h1>
                         </div>
-                        <div class="col-12 col-md-6 text-end pt-2">
+                        <div class="col-12 col-md-6 text-end pt-2 container_carprice">
                             <h1 class="text-muted">@Model.LocationCarCart.Car.Price €</h1>
                         </div>
                     </div>

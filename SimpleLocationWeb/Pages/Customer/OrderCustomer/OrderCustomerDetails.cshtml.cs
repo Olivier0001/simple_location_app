@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using SimpleLocation.DataAccess.Repository.IRepository;
 using SimpleLocation.Models;
 using SimpleLocation.Models.ViewModel;
+using System.Globalization;
 using System.Security.Claims;
 
 namespace SimpleLocationWeb.Pages.Customer.OrderCustomer
@@ -33,7 +34,9 @@ namespace SimpleLocationWeb.Pages.Customer.OrderCustomer
                     OrderHeader = _unitOfWork.OrderHeader.GetFirstOrDefault(filter: u => u.UserId == claim.Value, includeProperties: "User"),
                     OrderDetails = _unitOfWork.OrderDetails.GetAll(u => u.OrderId == id).ToList(),
                 };
+
             }
+
         }
 
         public IActionResult OnPost(int id)

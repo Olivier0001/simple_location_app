@@ -1,11 +1,11 @@
 ﻿@page
 @model SimpleLocationWeb.Pages.Customer.Home.CarDetailsModel
 
-<form method="post" enctype="multipart/form-data">
+<form method="get" enctype="multipart/form-data">
     <input asp-for="Car.Id" hidden />
     <div class="border p-3 mt-4">
-        <div class="row pb-2">
-            <div class="col-9">
+        <div class="row pb-2 container_car_details">
+            <div class="col-9 container_details">
                 <h2 class="text-primary pl-3">
                     Détails Voiture
                 </h2>
@@ -23,11 +23,12 @@
                     <h5><label asp-for="Car.Price">Prix</label>:</h5>
                     <p>@Model.Car.Price €</p>
                 </div>
+                <img src="@Model.Car.Image" class="image_car_details_mobile" />
             </div>
-            <div class="col-3">
+            <div class="col-3 container_image_car_details">
                 @if (Model.Car.Image != null)
                 {
-                    <img src="@Model.Car.Image" width="100%" style="border-radius:5px; border:1px solid #bbb9b9" />
+                    <img src="@Model.Car.Image" width="100%" class="image_car_details" />
                 }
             </div>
 

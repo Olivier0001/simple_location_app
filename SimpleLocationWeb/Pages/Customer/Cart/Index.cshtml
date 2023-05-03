@@ -1,13 +1,13 @@
 ﻿@page
 @model SimpleLocationWeb.Pages.Customer.Cart.IndexModel
 
-<form method="post">
+<form method="post" class="">
     <br />
     @if (Model.LocationCarCartList.Count() == 0)
     {
         <div class="container_image_text_panier">
             <h3 class="text_panier">Veuillez ajouter vos location au panier</h3>
-            <img src="/images/website/panier_vide.jpg"/>
+            <img src="/images/website/panier_vide.jpg" class="image_panier"/>
         </div>
     }
     else
@@ -24,7 +24,7 @@
                         </div>*@
                     </div>
                 </div>
-                <div class="card-body">
+                <div class="card-body-summary">
                     <div class="container_car_cart">
                         @foreach (var item in Model.LocationCarCartList)
                         {

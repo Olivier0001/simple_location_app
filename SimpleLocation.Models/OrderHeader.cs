@@ -30,6 +30,7 @@ namespace SimpleLocation.Models
 
         [Required(ErrorMessage = "Le champ Heure de début est obligatoire")]
         [Display(Name = "Pick Up Time")]
+        [DataType(DataType.Time)]
         public DateTime PickUpTime { get; set; }
 
         [Required(ErrorMessage = "Le champ Date de début est obligatoire")]

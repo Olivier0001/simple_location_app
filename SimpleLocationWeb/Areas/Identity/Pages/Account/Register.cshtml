@@ -30,7 +30,6 @@
                 }
                 <hr />
                 <div asp-validation-summary="All"></div>
-                @*<div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
                 <div class="form-floating my-2">
                     <input asp-for="Input.FirstName" class="form-control" aria-required="true" />
                     <label asp-for="Input.FirstName">Nom</label>
@@ -67,7 +66,6 @@
                         <div class="form-floating my-2">
                             <input type="radio" name="rdUserRole" value="@SD.ManagerRole" />@SD.ManagerRole
                             <input type="radio" name="rdUserRole" value="@SD.EmployeeRole" />@SD.EmployeeRole
-                            <input type="radio" name="rdUserRole" value="@SD.FrontDeskRole" />@SD.FrontDeskRole
                         </div>
                     }
                     else

@@ -1,9 +1,98 @@
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+@media (min-width: 1600px) {
+    html {
+        font-size: 16px;
+    }
+    .image_car_details_mobile {
+        display: none;
+    }
+    
 }
+/* --------------------------MOBILE-----------------------------*/
+
+@media (max-width: 480px) {
+    html {
+        font-size: 16px;
+    }
+
+    img.logo {
+        width: 50px;
+        height: 50px;
+    }
+  
+    h2.carCategory{
+        display: none;
+    }
+    div.car_card{
+        box-shadow: none;
+    }
+    p.car_textarea{
+        display: none;
+    }
+    div.container_image_car_details {
+        display: none;
+    }
+    div.register_image {
+        display: none;
+    }
+    .container_register_form_image{
+        display:flex;
+        flex-direction: column;
+    }
+    .image_car_details_mobile {
+        width: 100%;
+    }
+    div.navbar-collapse {
+        display: flex;
+    }
+    .container_car_details{
+        display: flex;
+        justify-content: center;
+    }
+    #manage{
+        display: none;
+    }
+    p.text-secondary {
+        display: none;
+    }
+    div.container_carbrand, div.container_carprice {
+        width: 50%;
+    }
+    header{
+        margin:0 0 50px 0;
+    }
+    img.image_panier{
+        width:300px;
+        height:300px;
+    }
+    h3.summary{
+        font-size: 15px;
+    }
+
+    div.container_image_carbrand_carname {
+        padding:0;
+    }
+    
+    div.container_carbrand_carname{
+        margin: 5px 0 0 10px;
+    }
+    
+    div.container_price_button {
+        display: flex;
+        width: 70%;
+        margin: 0 0 0 2.5px;
+        padding: 0;
+    }
+
+    div.card-body-summary {
+        display: flex;
+        flex-direction: column;
+        margin: 0 0 0 10px;
+        padding: 0;
+    }
+}
+
+/* -------------------------------------------------------*/
 
 html {
     position: relative;
@@ -87,7 +176,13 @@ p{
     height: 280px;
 }
 
-.car_textarea{
+.image_car_details {
+    border-radius: 5px;
+    border: 1px solid #bbb9b9;
+}
+
+
+.car_textarea {
     margin: 20px 0 20px 0;
 }
 
@@ -99,6 +194,11 @@ p{
 
 .register_image {
     width: 600px;
+}
+
+.image_register {
+    border-radius: 5px;
+    border: 1px solid #bbb9b9;
 }
 
 .container_register {
