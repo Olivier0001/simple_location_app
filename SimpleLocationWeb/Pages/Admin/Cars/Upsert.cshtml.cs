@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Security.Application;
 using SimpleLocation.DataAccess.Repository;
 using SimpleLocation.DataAccess.Repository.IRepository;
 using SimpleLocation.Models;
@@ -68,6 +69,10 @@ namespace SimpleLocationWeb.Pages.Admin.Cars
                 }
                 Car.Image = @"\images\cars\" + fileName_new + extension;
                 Car.CarStatus = "Disponible";
+                string safeHtmlFragmentCarName = Sanitizer.GetSafeHtmlFragment(Car.Name);
+                Car.Name = safeHtmlFragmentCarName;
+                string safeHtmlFragmentCarDescription = Sanitizer.GetSafeHtmlFragment(Car.Description);
+                Car.Description = safeHtmlFragmentCarDescription;
                 _unitOfWork.Car.Add(Car);
                 _unitOfWork.Save();
                 TempData["success"] = "Création de la voiture réussie";
@@ -102,6 +107,10 @@ namespace SimpleLocationWeb.Pages.Admin.Cars
                     Car.Image = objFromDb.Image;
 
                 }
+                string safeHtmlFragmentCarName = Sanitizer.GetSafeHtmlFragment(Car.Name);
+                Car.Name = safeHtmlFragmentCarName;
+                string safeHtmlFragmentCarDescription = Sanitizer.GetSafeHtmlFragment(Car.Description);
+                Car.Description = safeHtmlFragmentCarDescription;
                 _unitOfWork.Car.Update(Car);
                 _unitOfWork.Save();
                 TempData["success"] = "Modification de la voiture réussie";

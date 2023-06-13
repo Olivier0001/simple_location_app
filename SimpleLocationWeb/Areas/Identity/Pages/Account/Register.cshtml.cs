@@ -18,6 +18,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using Microsoft.Security.Application;
 using SimpleLocation.Models;
 using SimpleLocation.Utility;
 
@@ -133,6 +134,18 @@ namespace SimpleLocationWeb.Areas.Identity.Pages.Account
                 user.LastName = Input.LastName;
                 user.PhoneNumber = Input.PhoneNumber;
 
+                string safeHtmlFragmentEmail = Sanitizer.GetSafeHtmlFragment(Input.Email);
+                user.Email = safeHtmlFragmentEmail;
+
+                string safeHtmlFragmentFirstName = Sanitizer.GetSafeHtmlFragment(Input.FirstName);
+                user.FirstName = safeHtmlFragmentFirstName;
+
+                string safeHtmlFragmentLastName = Sanitizer.GetSafeHtmlFragment(Input.LastName);
+                user.LastName = safeHtmlFragmentLastName;
+
+                string safeHtmlFragmentPhoneNumber = Sanitizer.GetSafeHtmlFragment(Input.PhoneNumber);
+                user.PhoneNumber = safeHtmlFragmentPhoneNumber;
+
                 var result = await _userManager.CreateAsync(user, Input.Password);
 
                 if (!await _roleManager.RoleExistsAsync(SD.EmployeeRole))
@@ -189,7 +202,7 @@ namespace SimpleLocationWeb.Areas.Identity.Pages.Account
                     {
                         if (User.IsInRole("Manager"))
                         {
-                            TempData["success"] = "User create successfully";
+                            TempData["success"] = "Un Utilisateur a été créé";
                             return LocalRedirect("~/Admin/Users/Index");
                         }
                         else

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Security.Application;
 using SimpleLocation.DataAccess.Repository.IRepository;
 using SimpleLocation.Models;
 using SimpleLocationWeb.DateAccess.Data;
@@ -40,6 +41,8 @@ namespace SimpleLocationWeb.Pages.Admin.Categories
             }
             if (ModelState.IsValid)
             {
+                string safeHtmlFragment = Sanitizer.GetSafeHtmlFragment(Category.Name);
+                Category.Name = safeHtmlFragment;
                 _unitOfWork.Category.Update(Category);
                 _unitOfWork.Save();
                 TempData["success"] = "Modification de la catégorie réussie";

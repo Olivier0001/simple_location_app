@@ -11,6 +11,7 @@ using SessionService = Stripe.Checkout.SessionService;
 
 namespace SimpleLocationWeb.Pages.Customer.Cart
 {
+    [Authorize(Roles = "Customer")]
     [BindProperties]
     public class SummaryModel : PageModel
     {
@@ -64,13 +65,13 @@ namespace SimpleLocationWeb.Pages.Customer.Cart
                     OrderHeader.OrderTotal += (cartItem.Car.Price * cartItem.Count);
                     Car.CarStatus = cartItem.Car.CarStatus;
                     cartItem.Car.CarStatus = "Non Disponible";
-                    var test = cartItem.Car;
+                    var car = cartItem.Car;
                     TimeSpan Diff = OrderHeader.PickDateOfReturn - OrderHeader.PickUpDate;
-                    var resultat = Diff.TotalDays;
-                    var nombreDeJour = cartItem.Count;
-                    if (nombreDeJour == resultat)
+                    var diffTotalDays = Diff.TotalDays;
+                    var numberOfDays = cartItem.Count;
+                    if (numberOfDays == diffTotalDays)
                     {
-                        _unitOfWork.Car.Update(test);
+                        _unitOfWork.Car.Update(car);
                     }
                     else
                     {
@@ -114,6 +115,10 @@ namespace SimpleLocationWeb.Pages.Customer.Cart
                 _unitOfWork.LocationCarCart.RemoveRange(LocationCarCartList);
                 _unitOfWork.Save();
 
+
+
+
+
                 var domain = "https://localhost:44338/";
                 var options = new SessionCreateOptions
                 {
@@ -124,7 +129,7 @@ namespace SimpleLocationWeb.Pages.Customer.Cart
                           PriceData = new SessionLineItemPriceDataOptions
                           {
                               UnitAmount = (long)OrderHeader.OrderTotal*100,
-                              Currency="usd",
+                              Currency="eur",
                               ProductData= new SessionLineItemPriceDataProductDataOptions
                               {
                                   Name = "Simple Location Order",

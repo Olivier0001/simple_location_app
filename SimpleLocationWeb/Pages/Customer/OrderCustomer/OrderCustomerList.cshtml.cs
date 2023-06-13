@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SimpleLocation.DataAccess.Repository.IRepository;
@@ -8,6 +9,7 @@ using System.Security.Claims;
 
 namespace SimpleLocationWeb.Pages.Customer.OrderCustomer
 {
+    [Authorize(Roles = "Customer")]
     public class OrderCustomerListModel : PageModel
     {
         private readonly IUnitOfWork _unitOfWork;

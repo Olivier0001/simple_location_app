@@ -11,6 +11,7 @@ using System.Security.Claims;
 
 namespace SimpleLocationWeb.Pages.Customer.Cart
 {
+    [Authorize(Roles = "Customer")]
     public class IndexModel : PageModel
     {
         private readonly IUnitOfWork _unitOfWork;

@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Security.Application;
 using SimpleLocation.DataAccess.Repository;
 using SimpleLocation.DataAccess.Repository.IRepository;
 using SimpleLocation.Models;

@@ -9,7 +9,7 @@ using System.Security.Claims;
 
 namespace SimpleLocationWeb.Pages.Customer.OrderCustomer
 {
-    [Authorize]
+    [Authorize(Roles = "Customer")]
     public class OrderCustomerDetailsModel : PageModel
     {
         private readonly IUnitOfWork _unitOfWork;

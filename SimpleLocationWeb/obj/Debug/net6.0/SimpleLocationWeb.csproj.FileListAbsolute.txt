@@ -568,3 +568,5 @@ C:\Users\olivier.malamou\source\repos\SimpleLocation\SimpleLocationWeb\obj\Debug
 C:\Users\olivier.malamou\source\repos\SimpleLocation\SimpleLocationWeb\obj\Debug\net6.0\SimpleLocationWeb.pdb
 C:\Users\olivier.malamou\source\repos\SimpleLocation\SimpleLocationWeb\obj\Debug\net6.0\SimpleLocationWeb.genruntimeconfig.cache
 C:\Users\olivier.malamou\source\repos\SimpleLocation\SimpleLocationWeb\obj\Debug\net6.0\ref\SimpleLocationWeb.dll
+C:\Users\olivier.malamou\source\repos\SimpleLocation\SimpleLocationWeb\bin\Debug\net6.0\AntiXssLibrary.dll
+C:\Users\olivier.malamou\source\repos\SimpleLocation\SimpleLocationWeb\bin\Debug\net6.0\HtmlSanitizationLibrary.dll

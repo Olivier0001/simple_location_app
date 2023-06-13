@@ -5,6 +5,7 @@ using SimpleLocation.DataAccess.Repository;
 using SimpleLocation.Models;
 using SimpleLocationWeb.DateAccess.Data;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.Security.Application;
 
 namespace SimpleLocationWeb.Pages.Admin.CarBrands
 {
@@ -35,6 +36,8 @@ namespace SimpleLocationWeb.Pages.Admin.CarBrands
 
             if (ModelState.IsValid)
             {
+                string safeHtmlFragment = Sanitizer.GetSafeHtmlFragment(CarBrand.Name);
+                CarBrand.Name = safeHtmlFragment;
                 _unitOfWork.CarBrand.Update(CarBrand);
                 _unitOfWork.Save();
                 TempData["success"] = "Modification de la marque réussie";

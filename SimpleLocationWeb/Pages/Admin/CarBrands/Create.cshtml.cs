@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Security.Application;
 using SimpleLocation.DataAccess.Repository;
 using SimpleLocation.DataAccess.Repository.IRepository;
 using SimpleLocation.Models;
@@ -31,6 +32,8 @@ namespace SimpleLocationWeb.Pages.Admin.CarBrands
 
             if (ModelState.IsValid)
             {
+                string safeHtmlFragment = Sanitizer.GetSafeHtmlFragment(CarBrand.Name);
+                CarBrand.Name = safeHtmlFragment;
                 _unitOfWork.CarBrand.Add(CarBrand);
                 _unitOfWork.Save();
                 TempData["success"] = "Création de la marque réussie";

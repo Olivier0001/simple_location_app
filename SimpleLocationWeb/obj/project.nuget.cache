@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "kYJe9Glu6Rv0+UzjUEOqF1bsb0TWIVpr1BwjwMYdbFGOZuwL0+DQMZ4kYPNUHsA9zxYuZvT+AN5X2azjdhmdlw==",
+  "dgSpecHash": "coeomI/Orj3TI4yUgMmKI2R/uuXPlrKS+EYw0iLBNT1C8z5+nrAALrxwuE5BKfOUNv04+Rjeo12kcIuGEYgZEw==",
   "success": true,
   "projectFilePath": "C:\\Users\\olivier.malamou\\source\\repos\\SimpleLocation\\SimpleLocationWeb\\SimpleLocationWeb.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\olivier.malamou\\.nuget\\packages\\antixss\\4.3.0\\antixss.4.3.0.nupkg.sha512",
     "C:\\Users\\olivier.malamou\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\olivier.malamou\\.nuget\\packages\\mailkit\\3.2.0\\mailkit.3.2.0.nupkg.sha512",
     "C:\\Users\\olivier.malamou\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
@@ -213,5 +214,16 @@
     "C:\\Users\\olivier.malamou\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\olivier.malamou\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'AntiXSS 4.3.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "AntiXSS",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }
